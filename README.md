@@ -73,8 +73,7 @@ python-swe-lab/
 ├── performance-and-optimization/   # Profiling and optimization techniques
 ├── resources/                      # Resources for Python and SWE
 ├── experiments/                    # Hands-on coding sandbox
-├── notes/                          # Personal learning reflections
-└── references/                     # Curated external resources
+└── notes/                          # Personal learning reflections
 ```
 
 ## Table of Contents
