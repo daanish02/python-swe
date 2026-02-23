@@ -36,12 +36,12 @@ This repository starts from the fundamentals and progressively builds toward adv
 
 ### As a Learning System
 
-- **Start with the basics**: Begin with `fundamentals/` and progress at your own pace
-- **Study systematically**: Move through topics in order: `fundamentals/` → `core-concepts/` → `patterns-and-practices/`
+- **Start with the basics**: Begin with fundamentals and progress at your own pace
+- **Study systematically**: Move through topics in an orderly fashion
 - **Practice consistently**: Try examples and write code to reinforce each concept
 - **Revisit regularly**: Knowledge compounds with review and practice
-- **Take notes**: Use `notes/` to capture insights, questions, and reflections
-- **Experiment actively**: `experiments/` is your sandbox for testing ideas
+- **Take notes**: Use notes to capture insights, questions, and reflections
+- **Experiment actively**: Use experiments for sandboxing test ideas
 
 ### As a Reference
 
@@ -66,7 +66,8 @@ This repository is organized to **mirror the progression of mastery** and to **s
 python-swe-lab/
 ├── overview/                       # Python philosophy, ecosystem, and mental models
 ├── fundamentals/                   # Core Python features and syntax
-├── core-concepts/                  # Advanced Python concepts and internals
+├── core-concepts/                  # Intermediate Python concepts and features
+├── advanced-concepts/              # Advanced Python concepts and internals
 ├── patterns-and-practices/         # Software engineering patterns and principles
 ├── testing-and-quality/            # Testing strategies and code quality tools
 ├── tools-and-ecosystem/            # Python tooling and package management
@@ -81,7 +82,7 @@ python-swe-lab/
 ### [Overview](overview/)
 
 - What is Python and why learn it?
-- Python's design philosophy (Zen of Python)
+- Python's design philosophy
 - Python's role in software engineering
 - The Python execution model
 - Mental models for thinking in Python
@@ -109,6 +110,9 @@ python-swe-lab/
 - **Context managers**: resource management, custom context managers
 - **Advanced functions**: closures, first-class functions, namespaces
 - **Modules and packages**: import system, package structure, namespaces
+
+### [Advanced Concepts](advanced-concepts/)
+
 - **Type systems**: static typing with type hints, mypy, protocols
 - **Metaprogramming**: metaclasses, class decorators, dynamic class creation
 - **Descriptors**: understanding attribute access, property implementation
@@ -141,6 +145,9 @@ python-swe-lab/
 - **Property-based testing**: hypothesis, generative testing
 - **Test coverage**: measuring coverage, coverage-driven development
 - **Code quality**: linting (ruff, pylint), formatting (black), complexity metrics
+- **Type checkers**: mypy, pyright, configuration, incremental adoption
+- **Development tools**: ruff, black, isort, pre-commit hooks
+- **Debugging tools**: pdb, debugging strategies, post-mortem debugging
 
 ### [Tools and Ecosystem](tools-and-ecosystem/)
 
@@ -154,13 +161,10 @@ python-swe-lab/
 - **Remote repositories**: GitHub, GitLab, pushing/pulling, authentication
 - **CI/CD**: GitHub Actions, GitLab CI, automated testing and deployment
 - **Development environments**: IDEs, editors, Jupyter notebooks
-- **Development tools**: ruff, black, isort, pre-commit hooks
-- **Type checkers**: mypy, pyright, configuration, incremental adoption
-- **Debugging tools**: pdb, debugging strategies, post-mortem debugging
-- **Profiling tools**: cProfile, line_profiler, memory_profiler
 
 ### [Performance and Optimization](performance-and-optimization/)
 
+- **Profiling tools**: cProfile, line_profiler, memory_profiler
 - **Writing efficient code**: basic performance considerations for beginners
 - **When to optimize**: avoiding premature optimization
 - **Choosing data structures**: list vs dict vs set for different use cases

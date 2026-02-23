@@ -81,7 +81,7 @@ Python is genuinely general-purpose. It's used in:
 - **Web development**: Django, Flask, FastAPI
 - **Data science**: NumPy, Pandas, Matplotlib
 - **Machine learning**: TensorFlow, PyTorch, scikit-learn
-- **Automation and scripting**: System administration, DevOps
+- **Automation and scripting**: os, sys, subprocess
 - **Scientific computing**: SciPy, SymPy
 - **Desktop applications**: Tkinter, PyQt
 - **Game development**: Pygame

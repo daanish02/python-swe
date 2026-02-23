@@ -2,9 +2,9 @@
 
 ## About This Section
 
-This section explores intermediate to advanced Python concepts that build upon the fundamentals. These topics deepen your understanding of how Python works and introduce powerful features for writing more sophisticated, maintainable code.
+This section explores intermediate Python concepts that build upon the fundamentals. These topics deepen your understanding of how Python works and introduce powerful features for writing more sophisticated, maintainable code.
 
-You'll learn object-oriented programming, functional programming patterns, advanced language features, and Python's internal mechanisms. These concepts are essential for professional Python development.
+You'll learn object-oriented programming, functional programming patterns, decorators, generators, and Python's module system. These concepts form the bridge between basic Python and advanced professional development.
 
 ## Contents
 
@@ -31,31 +31,3 @@ Understanding context managers, the with statement, creating custom context mana
 ### [Modules and Packages](modules-and-packages.md)
 
 Deep dive into the import system, package structure, **init**.py files, relative vs absolute imports, namespace packages, and organizing larger projects into packages.
-
-### [Type Systems](type-systems.md)
-
-Type hints and annotations, typing module, protocols, generics, type checking with mypy/pyright, gradual typing strategies, and when to use static typing.
-
-### [Metaprogramming](metaprogramming.md)
-
-Metaclasses, dynamic class creation, **new** vs **init**, class decorators, modifying classes at runtime, and advanced object model manipulation.
-
-### [Descriptors and Properties](descriptors-and-properties.md)
-
-Understanding attribute access, the descriptor protocol, **get**, **set**, **delete**, property decorator, computed attributes, and attribute validation.
-
-### [Abstract Base Classes](abstract-base-classes.md)
-
-The abc module, defining interfaces, abstract methods, structural vs nominal subtyping, protocols, and designing extensible class hierarchies.
-
-### [Memory Management](memory-management.md)
-
-Reference counting, garbage collection, weakref module, memory profiling, **del** method, understanding object lifecycle, and memory optimization techniques.
-
-### [Concurrency](concurrency.md)
-
-Threading (threading module, thread safety, locks), multiprocessing (Process, Pool, sharing data), asyncio (coroutines, event loop, async/await), and choosing the right concurrency model.
-
-### [Python Internals](python-internals.md)
-
-CPython implementation details, bytecode and the dis module, the Global Interpreter Lock (GIL), how Python executes code, and understanding performance characteristics.

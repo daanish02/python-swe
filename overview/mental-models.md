@@ -96,7 +96,7 @@ Cat = create_class('Cat')
 A variable name is a **reference to an object**, not a box that contains a value.
 
 ```
-name ──→ object
+name → object
 ```
 
 Multiple names can reference the same object. Assignment creates new references, it doesn't copy objects.
@@ -377,7 +377,7 @@ make_sound(Cat())  # Works
 
 "If it walks like a duck and quacks like a duck, it's a duck."
 
-### Type Hints (Optional)
+### Type Hints
 
 Modern Python supports optional type annotations:
 

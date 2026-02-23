@@ -2,7 +2,6 @@
 
 ## Table of Contents
 
-- [TL;DR](#tldr)
 - [Variables and Assignment](#variables-and-assignment)
 - [Basic Data Types](#basic-data-types)
 - [Operators](#operators)
@@ -12,10 +11,6 @@
 - [Basic Input and Output](#basic-input-and-output)
 - [Summary](#summary)
 - [Next Steps](#next-steps)
-
-## TL;DR
-
-Python variables are references to objects. Basic types: `int` (integers), `float` (decimals), `str` (text), `bool` (True/False), `None` (absence of value). Operators: arithmetic (`+`, `-`, `*`, `/`, `//`, `%`, `**`), comparison (`==`, `!=`, `<`, `>`, `<=`, `>=`), logical (`and`, `or`, `not`). Use `#` for comments. Follow snake_case naming for variables/functions, PascalCase for classes. Constants in UPPER_CASE. Get input with `input()`, output with `print()`. Python is dynamically typed - types determined at runtime.
 
 ## Variables and Assignment
 

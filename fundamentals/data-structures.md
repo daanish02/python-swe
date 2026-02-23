@@ -2,7 +2,6 @@
 
 ## Table of Contents
 
-- [TL;DR](#tldr)
 - [Lists](#lists)
 - [Tuples](#tuples)
 - [Dictionaries](#dictionaries)
@@ -10,10 +9,6 @@
 - [Choosing the Right Data Structure](#choosing-the-right-data-structure)
 - [Summary](#summary)
 - [Next Steps](#next-steps)
-
-## TL;DR
-
-Python's built-in data structures: **Lists** - ordered, mutable sequences `[1, 2, 3]`, support indexing/slicing, methods like append/extend/insert/remove. **Tuples** - ordered, immutable sequences `(1, 2, 3)`, faster than lists, used for fixed data. **Dictionaries** - key-value pairs `{'a': 1, 'b': 2}`, O(1) lookup, keys must be immutable. **Sets** - unordered, unique elements `{1, 2, 3}`, O(1) membership testing, support union/intersection/difference. Use lists for ordered mutable data, tuples for immutable records, dicts for lookups, sets for unique collections and membership tests.
 
 ## Lists
 
@@ -556,13 +551,13 @@ fs | {4, 5}  # Returns new frozenset: frozenset({1, 2, 3, 4, 5})
 | Use Case                             | Data Structure | Why                                      |
 | ------------------------------------ | -------------- | ---------------------------------------- |
 | Ordered collection, need to modify   | **List**       | Mutable, ordered, allows duplicates      |
-| Ordered collection, shouldn't change | **Tuple**      | Immutable, ordered, faster than list     |
+| Sequence of same type (large data)   | **List**       | Simple, efficient for homogeneous data   |
 | Key-value lookups                    | **Dictionary** | O(1) access by key                       |
+| Config data that shouldn't change    | **Dictionary** | Named access, clear structure            |
+| Ordered collection, shouldn't change | **Tuple**      | Immutable, ordered, faster than list     |
+| Multiple return values               | **Tuple**      | Conventional, unpacks easily             |
 | Unique elements, membership tests    | **Set**        | O(1) membership, automatic uniqueness    |
 | Mathematical set operations          | **Set**        | Union, intersection, difference built-in |
-| Sequence of same type (large data)   | **List**       | Simple, efficient for homogeneous data   |
-| Multiple return values               | **Tuple**      | Conventional, unpacks easily             |
-| Config data that shouldn't change    | **Dictionary** | Named access, clear structure            |
 
 **Performance comparison:**
 

@@ -2,7 +2,6 @@
 
 ## Table of Contents
 
-- [How Python Runs Your Code](#how-python-runs-your-code)
 - [The Python Execution Pipeline](#the-python-execution-pipeline)
 - [CPython: The Reference Implementation](#cpython-the-reference-implementation)
 - [Compilation vs. Interpretation](#compilation-vs-interpretation)
@@ -14,10 +13,6 @@
 - [Performance Implications](#performance-implications)
 - [Summary](#summary)
 - [Next Steps](#next-steps)
-
-## How Python Runs Your Code
-
-Understanding how Python executes code helps you reason about performance, debug issues, and make informed design decisions. Python's execution model is distinct from both purely compiled and purely interpreted languages.
 
 ## The Python Execution Pipeline
 

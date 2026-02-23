@@ -2,7 +2,6 @@
 
 ## Table of Contents
 
-- [TL;DR](#tldr)
 - [Conditional Statements](#conditional-statements)
 - [Loops](#loops)
 - [Loop Control](#loop-control)
@@ -10,10 +9,6 @@
 - [Conditional Expressions](#conditional-expressions)
 - [Summary](#summary)
 - [Next Steps](#next-steps)
-
-## TL;DR
-
-Control flow determines the order code executes. **if/elif/else** for conditional branching - use `:` and indentation for blocks. **for** loops iterate over sequences (`for item in items`), **while** loops repeat while condition is True. **break** exits loop, **continue** skips to next iteration, **pass** does nothing. **match/case** (Python 3.10+) for pattern matching. **Ternary operator**: `value = x if condition else y`. Python uses significant indentation (4 spaces standard) to define code blocks. Conditions use truthiness - empty collections, 0, None are falsy.
 
 ## Conditional Statements
 

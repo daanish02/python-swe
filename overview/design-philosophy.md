@@ -221,7 +221,7 @@ Resist the urge to add special handling for edge cases that violates general pri
 
 BUT - when reality demands it, pragmatism wins. Python isn't dogmatic. If breaking a rule solves a real problem, do it (but document why).
 
-### Errors Should Never Pass Silently / Unless Explicitly Silenced
+### Errors Should Never Pass Silently; Unless Explicitly Silenced
 
 Fail loudly. Make problems visible.
 
@@ -279,7 +279,7 @@ for item in items:
 
 This doesn't mean Python forbids alternatives, but there's usually one clear, idiomatic approach.
 
-### Now is Better Than Never / Although Never is Often Better Than Right Now
+### Now is Better Than Never; Although Never is Often Better Than Right Now
 
 Ship working code, but don't rush broken code. Balance urgency with quality.
 
