@@ -127,6 +127,7 @@ python-swe-lab/
 - **Writing clean code**: meaningful variable names, small functions
 - **DRY principle**: Don't Repeat Yourself
 - **Comments and documentation**: when and how to document code
+- **Logging**: logging best practices, log levels, handlers, formatters, production logging
 - **Code organization**: project layout, module design, separation of concerns
 - **Design patterns**: creational, structural, behavioral patterns in Python
 - **SOLID principles**: applied to Python code
