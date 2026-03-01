@@ -1,0 +1,174 @@
+[project]
+site_name = "Python and SWE"
+site_description = "Notes related to Python and software engineering."
+site_author = "Danish Ahmed"
+# site_url = "https://www.example.com/"
+
+copyright = """
+Copyright &copy; 2026 Arc Systems
+"""
+
+nav = [
+  { "Home" = "README.md" },
+  { "Overview" = [
+    "overview/README.md",
+    { "Introduction" = "overview/introduction.md" },
+    { "Design Philosophy" = "overview/design-philosophy.md" },
+    { "Execution Model" = "overview/execution-model.md" },
+    { "Mental Model" = "overview/mental-models.md" },
+  ] },
+  { "Fundamentals" = [
+    "fundamentals/README.md",
+    { "Basic Syntax" = "fundamentals/syntax-and-data-types.md" },
+    { "Control Flow" = "fundamentals/control-flow.md" },
+    { "Data Structures" = "fundamentals/data-structures.md" },
+    { "Functions" = "fundamentals/functions.md" },
+    { "File Operations" = "fundamentals/file-operations.md" },
+    { "Error Handling" = "fundamentals/error-handling.md" },
+  ] },
+  { "Core Concepts" = [
+    "core-concepts/README.md",
+    { "Comprehensions and Functional Tools" = "core-concepts/comprehensions-and-functional.md" },
+    { "Object-Oriented Programming" = "core-concepts/object-oriented-programming.md" },
+    { "Advanced Functions" = "core-concepts/advanced-functions.md" },
+    { "Iterators and Generators" = "core-concepts/iterators-and-generators.md" },
+    { "Context Managers" = "core-concepts/context-managers.md" },
+    { "Modules and Packages" = "core-concepts/modules-and-packages.md" },
+  ] },
+  { "Advanced Concepts" = [
+    "advanced-concepts/README.md",
+    { "Type Systems" = "advanced-concepts/type-systems.md" },
+    { "Metaprogramming" = "advanced-concepts/metaprogramming.md" },
+    { "Descriptors and Properties" = "advanced-concepts/descriptors-and-properties.md" },
+    { "Iterators and Generators" = "advanced-concepts/iterators-and-generators.md" },
+    { "Abstract Base Classes" = "advanced-concepts/abstract-base-classes.md" },
+    { "Memory Management" = "advanced-concepts/memory-management.md" },
+    { "Concurrency" = "advanced-concepts/concurrency.md" },
+    { "Python Internals" = "advanced-concepts/python-internals.md" },
+  ] },
+  { "Patterns and Practises" = [
+    "patterns-and-practices/README.md",
+    { "Code Style and Standards" = "patterns-and-practices/code-style-and-standards.md" },
+    { "Writing Clean Code" = "patterns-and-practices/writing-clean-code.md" },
+    { "Documentation" = "patterns-and-practices/documentation.md" },
+    { "Logging" = "patterns-and-practices/logging.md" },
+    { "Code Organization" = "patterns-and-practices/code-organization.md" },
+    { "Design Patterns" = "patterns-and-practices/design-patterns.md" },
+    { "SOLID Principles" = "patterns-and-practices/solid-principles.md" },
+    { "Refactoring" = "patterns-and-practices/refactoring.md" },
+  ] },
+  { "Testing and Quality" = [
+    "testing-and-quality/README.md",
+    { "Testing Fundamentals" = "testing-and-quality/testing-fundamentals.md" },
+    { "Unit Testing" = "testing-and-quality/unit-testing.md" },
+    { "Testing Strategies" = "testing-and-quality/testing-strategies.md" },
+    { "Mocking and Fixtures" = "testing-and-quality/mocking-and-fixtures.md" },
+    { "Advanced Testing" = "testing-and-quality/advanced-testing.md" },
+    { "Code Quality Tools" = "testing-and-quality/code-quality-tools.md" },
+    { "Type Checking" = "testing-and-quality/type-checking.md" },
+    { "Debugging Techniques" = "testing-and-quality/debugging-techniques.md" },
+  ] },
+  { "Tools and Ecosystem" = [
+    "tools-and-ecosystem/README.md",
+    { "Python Setup and Installation" = "tools-and-ecosystem/python-setup.md" },
+    { "Development Environments" = "tools-and-ecosystem/development-environments.md" },
+    { "Running Python Code" = "tools-and-ecosystem/running-python.md" },
+    { "Package Management" = "tools-and-ecosystem/package-management.md" },
+    { "Virtual Environments" = "tools-and-ecosystem/virtual-environments.md" },
+    { "Version Control with Git" = "tools-and-ecosystem/version-control.md" },
+    { "Git Workflows" = "tools-and-ecosystem/git-workflows.md" },
+    { "Remote Repositories" = "tools-and-ecosystem/remote-repositories.md" },
+    { "CI/CD Pipelines" = "tools-and-ecosystem/ci-cd.md" },
+  ] },
+  { "Performance and Optimization" = [
+    "performance-and-optimization/README.md",
+    { "Performance Fundamentals" = "performance-and-optimization/performance-fundamentals.md" },
+    { "Data Structure Performance" = "performance-and-optimization/data-structure-performance.md" },
+    { "Profiling and Measurement" = "performance-and-optimization/profiling-and-measurement.md" },
+    { "Optimization Techniques" = "performance-and-optimization/optimization-techniques.md" },
+    { "Memory Optimization" = "performance-and-optimization/memory-optimization.md" },
+    { "Parallel and Concurrent Execution" = "performance-and-optimization/parallel-and-concurrent.md" },
+    { "Native Extensions" = "performance-and-optimization/native-extensions.md" },
+  ] },
+  { "Resources" = "resources.md" },
+]
+
+# extra_css = ["stylesheets/extra.css"]
+# extra_javascript = ["javascripts/extra.js"]
+
+[project.theme]
+# variant = "classic"
+# custom_dir = "overrides"
+# favicon = "images/favicon.png"
+language = "en"
+
+features = [
+  "announce.dismiss",
+  # "content.action.edit",
+  # "content.action.view",
+  "content.code.annotate",
+  "content.code.copy",
+  "content.code.select",
+  "content.footnote.tooltips",
+  "content.tabs.link",
+  "content.tooltips",
+  # "header.autohide",
+  # "navigation.expand",
+  "navigation.footer",
+  "navigation.indexes",
+  "navigation.instant",
+  "navigation.instant.prefetch",
+  "navigation.instant.progress",
+  "navigation.path",
+  "navigation.prune",
+  # "navigation.sections",
+  # "navigation.tabs",
+  # "navigation.tabs.sticky",
+  "navigation.top",
+  "navigation.tracking",
+  "search.highlight",
+  "toc.follow",
+  # "toc.integrate",
+]
+
+[project.theme.palette]
+scheme = "slate"
+primary = "red"
+accent = "red"
+
+[project.theme.font]
+text = "Roboto"
+code = "Jetbrains Mono"
+
+# [project.theme.icon]
+# logo = "lucide/smile"
+# repo = "lucide/smile"
+
+# [[project.extra.social]]
+# icon = "fontawesome/brands/github"
+# link = "https://github.com/user/repo"
+
+[project.markdown_extensions.pymdownx.superfences]
+custom_fences = [
+  { name = "mermaid", class = "mermaid", format = "pymdownx.superfences.fence_code_format" },
+]
+
+[project.markdown_extensions.pymdownx.tabbed.slugify]
+object = "pymdownx.slugs.slugify"
+kwds = { case = "lower" }
+[project.markdown_extensions.pymdownx.tabbed]
+alternate_style = true
+
+[project.markdown_extensions.admonition]
+[project.markdown_extensions.pymdownx.details]
+
+[project.extra]
+generator = false
+
+[project.markdown_extensions.pymdownx.highlight]
+anchor_linenums = true
+
+line_spans = "__span"
+pygments_lang_class = true
+[project.markdown_extensions.pymdownx.inlinehilite]
+[project.markdown_extensions.pymdownx.snippets]

@@ -1,0 +1,1586 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Notes related to Python and software engineering.">
+      
+      
+        <meta name="author" content="Danish Ahmed">
+      
+      
+      
+      
+        <link rel="next" href="./overview/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="./assets/images/favicon.png">
+      <meta name="generator" content="zensical-0.0.24">
+    
+    
+      
+        <title>Python and Software Engineering - Python and SWE</title>
+      
+    
+    
+      
+        
+      
+      <link rel="stylesheet" href="./assets/stylesheets/modern/main.28978c9b.min.css">
+      
+        
+          
+        
+        <link rel="stylesheet" href="./assets/stylesheets/modern/palette.dfe2e883.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i%7CJetbrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Jetbrains Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,a=__md_scope)=>JSON.parse(t.getItem(a.pathname+"."+e)),__md_set=(e,t,a=localStorage,_=__md_scope)=>{try{a.setItem(_.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="red" data-md-color-accent="red">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#python-and-software-engineering" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="" title="Python and SWE" class="md-header__button md-logo" aria-label="Python and SWE" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 7v14M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-menu" viewBox="0 0 24 24"><path d="M4 5h16M4 12h16M4 19h16"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Python and SWE
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Python and Software Engineering
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="none" data-md-color-scheme="slate" data-md-color-primary="red" data-md-color-accent="red"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-search" viewBox="0 0 24 24"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog" aria-label="Search">
+  <button type="button" class="md-search__button">
+    Search
+  </button>
+</div>
+      
+    
+    <div class="md-header__source">
+      
+    </div>
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="" title="Python and SWE" class="md-nav__button md-logo" aria-label="Python and SWE" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 7v14M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>
+
+    </a>
+    Python and SWE
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#purpose-and-philosophy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Purpose and Philosophy
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#who-this-repository-is-for" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Who This Repository Is For
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-use-this-repository" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to Use This Repository
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How to Use This Repository">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#as-a-learning-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        As a Learning System
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#as-a-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        As a Reference
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#as-a-living-document" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        As a Living Document
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#repository-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Repository Structure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table of Contents
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Table of Contents">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fundamentals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fundamentals
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#core-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core Concepts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advanced Concepts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#patterns-and-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Patterns and Practices
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testing-and-quality" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testing and Quality
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tools-and-ecosystem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tools and Ecosystem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performance-and-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance and Optimization
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learning-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Learning Principles
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contribution-to-your-growth" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contribution to Your Growth
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="./overview/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="./fundamentals/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="./core-concepts/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Core Concepts
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="./advanced-concepts/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced Concepts
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="./patterns-and-practices/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Patterns and Practices
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="./testing-and-quality/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Testing and Quality
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="./tools-and-ecosystem/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools and Ecosystem
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="./performance-and-optimization/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Performance and Optimization
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="./resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#purpose-and-philosophy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Purpose and Philosophy
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#who-this-repository-is-for" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Who This Repository Is For
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-use-this-repository" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to Use This Repository
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How to Use This Repository">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#as-a-learning-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        As a Learning System
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#as-a-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        As a Reference
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#as-a-living-document" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        As a Living Document
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#repository-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Repository Structure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table of Contents
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Table of Contents">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fundamentals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fundamentals
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#core-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core Concepts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advanced Concepts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#patterns-and-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Patterns and Practices
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testing-and-quality" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testing and Quality
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tools-and-ecosystem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tools and Ecosystem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performance-and-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance and Optimization
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learning-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Learning Principles
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contribution-to-your-growth" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contribution to Your Growth
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+<h1 id="python-and-software-engineering">Python and Software Engineering</h1>
+<h2 id="purpose-and-philosophy">Purpose and Philosophy</h2>
+<p>This repository serves as a <strong>comprehensive, living knowledge base</strong> for learning Python from the ground up and building toward professional software engineering practices. It is not a collection of projects -- it is a structured learning environment designed for <strong>long-term mastery</strong> of Python as a professional engineering tool.</p>
+<p>The focus is on:</p>
+<ul>
+<li><strong>Learning Python fundamentals and building a strong foundation</strong></li>
+<li><strong>Writing clean, maintainable, and well-structured Python code</strong></li>
+<li><strong>Understanding software engineering principles</strong> that transcend frameworks</li>
+<li><strong>Progressively deepening knowledge of Python's features and best practices</strong></li>
+<li><strong>Building expertise in code quality, testing, and design patterns</strong></li>
+<li><strong>Creating a personal reference system</strong> that evolves with your learning journey</li>
+</ul>
+<p>This is a <strong>concept-first, tool-agnostic</strong> repository. While specific libraries and frameworks may be referenced or used in examples, the emphasis is always on <strong>transferable understanding</strong> rather than framework-specific tutorials.</p>
+<div class="admonition quote">
+<p class="admonition-title">Quote</p>
+<p>"The competent programmer is fully aware of the strictly limited size of his own skull; therefore he approaches the programming task in full humility."
+-- <em>Edsger W. Dijkstra</em></p>
+</div>
+<p>Software engineering is a craft that demands continuous learning, humility, and disciplined practice. This repository is a tool for that journey -- a structured, evolving system for building mastery one concept at a time.</p>
+<h2 id="who-this-repository-is-for">Who This Repository Is For</h2>
+<p>This repository is designed for:</p>
+<ul>
+<li><strong>Beginners starting their Python journey</strong> who want a structured learning path</li>
+<li><strong>Self-learners</strong> who value organized, comprehensive resources over scattered tutorials</li>
+<li><strong>Students and aspiring developers</strong> building toward professional software engineering</li>
+<li><strong>Anyone seeking to understand Python deeply</strong>, not just superficially</li>
+<li><strong>Learners treating their technical growth as a lifelong journey</strong></li>
+</ul>
+<p>This repository starts from the fundamentals and progressively builds toward advanced topics. Whether you're writing your first Python script or working toward professional-grade engineering practices, this structured approach will guide your growth.</p>
+<h2 id="how-to-use-this-repository">How to Use This Repository</h2>
+<h3 id="as-a-learning-system">As a Learning System</h3>
+<ul>
+<li><strong>Start with the basics</strong>: Begin with fundamentals and progress at your own pace</li>
+<li><strong>Study systematically</strong>: Move through topics in an orderly fashion</li>
+<li><strong>Practice consistently</strong>: Try examples and write code to reinforce each concept</li>
+<li><strong>Revisit regularly</strong>: Knowledge compounds with review and practice</li>
+<li><strong>Take notes</strong>: Use notes to capture insights, questions, and reflections</li>
+<li><strong>Experiment actively</strong>: Use experiments for sandboxing test ideas</li>
+</ul>
+<h3 id="as-a-reference">As a Reference</h3>
+<ul>
+<li><strong>Quick lookup</strong>: Navigate via the table of contents to find specific topics</li>
+<li><strong>Index knowledge</strong>: Use descriptive filenames and consistent structure for easy searching</li>
+<li><strong>Build mental models</strong>: Focus on understanding <em>why</em> patterns exist, not just <em>how</em> to use them</li>
+</ul>
+<h3 id="as-a-living-document">As a Living Document</h3>
+<ul>
+<li><strong>Expand continuously</strong>: Add new patterns, practices, and insights as you encounter them</li>
+<li><strong>Refactor old content</strong>: As your understanding deepens, improve earlier notes</li>
+<li><strong>Track evolution</strong>: Your learning journey is visible through commit history</li>
+<li><strong>Adapt to change</strong>: As Python evolves, update this repository accordingly</li>
+</ul>
+<hr />
+<h2 id="repository-structure">Repository Structure</h2>
+<p>This repository is organized to <strong>mirror the progression of mastery</strong> and to <strong>support efficient navigation</strong>:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>python-swe-lab/
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>├── overview/                       # Python philosophy, ecosystem, and mental models
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>├── fundamentals/                   # Core Python features and syntax
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>├── core-concepts/                  # Intermediate Python concepts and features
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>├── advanced-concepts/              # Advanced Python concepts and internals
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>├── patterns-and-practices/         # Software engineering patterns and principles
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>├── testing-and-quality/            # Testing strategies and code quality tools
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>├── tools-and-ecosystem/            # Python tooling and package management
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>├── performance-and-optimization/   # Profiling and optimization techniques
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>├── experiments/                    # Hands-on coding sandbox
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>├── notes/                          # Personal learning reflections
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>└── resources.md                    # Resources for Python and SWE
+</span></code></pre></div>
+<h2 id="table-of-contents">Table of Contents</h2>
+<h3 id="overview"><a href="overview/">Overview</a></h3>
+<ul>
+<li>What is Python and why learn it?</li>
+<li>Python's design philosophy</li>
+<li>Python's role in software engineering</li>
+<li>The Python execution model</li>
+<li>Mental models for thinking in Python</li>
+</ul>
+<h3 id="fundamentals"><a href="fundamentals/">Fundamentals</a></h3>
+<ul>
+<li><strong>Syntax basics</strong>: Variables, operators, comments, print, input, naming conventions</li>
+<li><strong>Data types</strong>: int, float, str, bool, None -- characteristics and operations</li>
+<li><strong>Control flow</strong>: if/elif/else statements, for, while, match, break/continue/pass</li>
+<li><strong>Data structures</strong>: lists, tuples, dicts, sets -- deep understanding</li>
+<li><strong>Functions</strong>: defining functions, parameters, return values, scope</li>
+<li><strong>File I/O</strong>: file operations, CSV, JSON, pathlib</li>
+<li><strong>Basic error handling</strong>: try/except blocks, common exceptions</li>
+<li><strong>Modules and imports</strong>: using modules, import statements</li>
+</ul>
+<h3 id="core-concepts"><a href="core-concepts/">Core Concepts</a></h3>
+<ul>
+<li><strong>List comprehensions</strong>: creating lists with concise syntax</li>
+<li><strong>Lambda functions</strong>: anonymous functions and when to use them</li>
+<li><strong>Map, filter, reduce</strong>: functional programming basics</li>
+<li><strong>Object-oriented Python</strong>: classes, objects, methods, attributes</li>
+<li><strong>Inheritance and composition</strong>: building class hierarchies</li>
+<li><strong>Iterators and generators</strong>: lazy evaluation, iteration protocol</li>
+<li><strong>Decorators</strong>: function decorators, class decorators, practical patterns</li>
+<li><strong>Context managers</strong>: resource management, custom context managers</li>
+<li><strong>Advanced functions</strong>: closures, first-class functions, namespaces</li>
+<li><strong>Modules and packages</strong>: import system, package structure, namespaces</li>
+</ul>
+<h3 id="advanced-concepts"><a href="advanced-concepts/">Advanced Concepts</a></h3>
+<ul>
+<li><strong>Type systems</strong>: static typing with type hints, mypy, protocols</li>
+<li><strong>Metaprogramming</strong>: metaclasses, class decorators, dynamic class creation</li>
+<li><strong>Descriptors</strong>: understanding attribute access, property implementation</li>
+<li><strong>Abstract base classes</strong>: interface design, structural vs nominal subtyping</li>
+<li><strong>Memory management</strong>: garbage collection, reference counting, memory profiling</li>
+<li><strong>Concurrency</strong>: threading, multiprocessing, asyncio, event loops</li>
+<li><strong>Python internals</strong>: CPython implementation, bytecode, GIL</li>
+</ul>
+<h3 id="patterns-and-practices"><a href="patterns-and-practices/">Patterns and Practices</a></h3>
+<ul>
+<li><strong>Code style basics</strong>: PEP 8, naming conventions, readability</li>
+<li><strong>Writing clean code</strong>: meaningful variable names, small functions</li>
+<li><strong>DRY principle</strong>: Don't Repeat Yourself</li>
+<li><strong>Comments and documentation</strong>: when and how to document code</li>
+<li><strong>Logging</strong>: logging best practices, log levels, handlers, formatters, production logging</li>
+<li><strong>Code organization</strong>: project layout, module design, separation of concerns</li>
+<li><strong>Design patterns</strong>: creational, structural, behavioral patterns in Python</li>
+<li><strong>SOLID principles</strong>: applied to Python code</li>
+<li><strong>Refactoring</strong>: techniques for improving code structure</li>
+<li><strong>API design</strong>: public interfaces, versioning, backward compatibility</li>
+</ul>
+<h3 id="testing-and-quality"><a href="testing-and-quality/">Testing and Quality</a></h3>
+<ul>
+<li><strong>Why test your code</strong>: understanding the importance of testing</li>
+<li><strong>Writing your first test</strong>: basic test structure and assertions</li>
+<li><strong>Debugging basics</strong>: using print statements, understanding error messages</li>
+<li><strong>Testing philosophy</strong>: test-driven development, behavior-driven development</li>
+<li><strong>Unit testing</strong>: pytest, unittest, test design, fixtures, parameterization</li>
+<li><strong>Integration testing</strong>: testing system boundaries, test doubles</li>
+<li><strong>Mocking and stubbing</strong>: unittest.mock, testing external dependencies</li>
+<li><strong>Property-based testing</strong>: hypothesis, generative testing</li>
+<li><strong>Test coverage</strong>: measuring coverage, coverage-driven development</li>
+<li><strong>Code quality</strong>: linting (ruff, pylint), formatting (black), complexity metrics</li>
+<li><strong>Type checkers</strong>: mypy, pyright, configuration, incremental adoption</li>
+<li><strong>Development tools</strong>: ruff, black, isort, pre-commit hooks</li>
+<li><strong>Debugging tools</strong>: pdb, debugging strategies, post-mortem debugging</li>
+</ul>
+<h3 id="tools-and-ecosystem"><a href="tools-and-ecosystem/">Tools and Ecosystem</a></h3>
+<ul>
+<li><strong>Python setup and installation</strong>: managing Python versions, installation methods</li>
+<li><strong>Running Python code</strong>: scripts, interactive mode, REPL, notebooks</li>
+<li><strong>Installing packages with pip</strong>: using pip install, requirements.txt basics</li>
+<li><strong>Package management</strong>: pip, poetry, uv, requirements management</li>
+<li><strong>Virtual environments</strong>: venv, virtualenv, conda, environment isolation</li>
+<li><strong>Version control with Git</strong>: commits, branches, staging, history, Git fundamentals</li>
+<li><strong>Git workflows</strong>: branching strategies, pull requests, collaboration patterns</li>
+<li><strong>Remote repositories</strong>: GitHub, GitLab, pushing/pulling, authentication</li>
+<li><strong>CI/CD</strong>: GitHub Actions, GitLab CI, automated testing and deployment</li>
+<li><strong>Development environments</strong>: IDEs, editors, Jupyter notebooks</li>
+</ul>
+<h3 id="performance-and-optimization"><a href="performance-and-optimization/">Performance and Optimization</a></h3>
+<ul>
+<li><strong>Profiling tools</strong>: cProfile, line_profiler, memory_profiler</li>
+<li><strong>Writing efficient code</strong>: basic performance considerations for beginners</li>
+<li><strong>When to optimize</strong>: avoiding premature optimization</li>
+<li><strong>Choosing data structures</strong>: list vs dict vs set for different use cases</li>
+<li><strong>Profiling techniques</strong>: identifying bottlenecks, performance measurement</li>
+<li><strong>Algorithmic optimization</strong>: time complexity, space complexity, trade-offs</li>
+<li><strong>Memory optimization</strong>: reducing memory footprint, garbage collection tuning</li>
+<li><strong>Caching strategies</strong>: memoization, LRU cache, application-level caching</li>
+<li><strong>Parallelism</strong>: when and how to parallelize, overhead considerations</li>
+<li><strong>Native extensions</strong>: using Cython, calling C libraries, performance boundaries</li>
+</ul>
+<h2 id="learning-principles">Learning Principles</h2>
+<p><strong>Depth Over Breadth</strong>: Understand core concepts deeply rather than superficially covering many topics. One well-understood pattern is more valuable than ten memorized recipes.</p>
+<p><strong>Concepts Over Tools</strong>: Focus on the <em>why</em> and the <em>what</em>, not just the <em>how</em>. Tools change, but principles endure. Understand the problem a tool solves before learning the tool.</p>
+<p><strong>Practice and Reflection</strong>: Knowledge without application is incomplete. Experiment, fail, reflect, and refine. Use this repository to document both successes and lessons from failures.</p>
+<p><strong>Progressive Refinement</strong>: Your understanding will evolve. Revisit old notes, refactor them, and build on earlier foundations. This repository grows with you.</p>
+<p><strong>Connection Building</strong>: Software engineering is interconnected. Look for relationships between patterns, principles, and practices. Build a web of understanding, not isolated facts.</p>
+<h2 id="contribution-to-your-growth">Contribution to Your Growth</h2>
+<p>This repository is your <strong>personal technical encyclopedia</strong> for Python software engineering. It is:</p>
+<ul>
+<li>A <strong>second brain</strong> that captures your evolving understanding</li>
+<li>A <strong>learning laboratory</strong> where you explore and experiment</li>
+<li>A <strong>professional reference</strong> you return to throughout your career</li>
+<li>A <strong>living document</strong> that reflects your growth as an engineer</li>
+</ul>
+<p>Invest in this repository. It will compound in value over years.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-circle-arrow-up" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m16 12-4-4-4 4M12 16V8"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+        
+          
+          <a href="./overview/" class="md-footer__link md-footer__link--next" aria-label="Next: Overview">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Overview
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Arc Systems
+
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      
+      <script id="__config" type="application/json">{"annotate":null,"base":".","features":["announce.dismiss","content.code.annotate","content.code.copy","content.code.select","content.footnote.tooltips","content.tabs.link","content.tooltips","navigation.footer","navigation.indexes","navigation.instant","navigation.instant.prefetch","navigation.instant.progress","navigation.path","navigation.prune","navigation.top","navigation.tracking","search.highlight","toc.follow"],"search":"./assets/javascripts/workers/search.e2d2d235.min.js","tags":null,"translations":{"clipboard.copied":"Copied to clipboard","clipboard.copy":"Copy to clipboard","search.result.more.one":"1 more on this page","search.result.more.other":"# more on this page","search.result.none":"No matching documents","search.result.one":"1 matching document","search.result.other":"# matching documents","search.result.placeholder":"Type to start searching","search.result.term.missing":"Missing","select.version":"Select version"},"version":null}</script>
+    
+    
+      <script src="./assets/javascripts/bundle.16f8adc2.min.js"></script>
+      
+    
+  </body>
+</html>
