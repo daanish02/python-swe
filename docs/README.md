@@ -64,131 +64,110 @@ This repository starts from the fundamentals and progressively builds toward adv
 
 This repository is organized to **mirror the progression of mastery** and to **support efficient navigation**:
 
-```
+```bash
 python-swe-lab/
-├── overview/                       # Python philosophy, ecosystem, and mental models
-├── fundamentals/                   # Core Python features and syntax
-├── core-concepts/                  # Intermediate Python concepts and features
-├── advanced-concepts/              # Advanced Python concepts and internals
-├── patterns-and-practices/         # Software engineering patterns and principles
-├── testing-and-quality/            # Testing strategies and code quality tools
-├── tools-and-ecosystem/            # Python tooling and package management
-├── performance-and-optimization/   # Profiling and optimization techniques
-├── experiments/                    # Hands-on coding sandbox
-├── notes/                          # Personal learning reflections
-└── resources.md                    # Resources for Python and SWE
+├── overview/                      # Python philosophy, ecosystem, and mental models
+├── fundamentals/                  # Core Python features and syntax
+├── core-concepts/                 # Intermediate Python concepts and features
+├── advanced-concepts/             # Advanced Python concepts and internals
+├── patterns-and-practices/        # Software engineering patterns and principles
+├── testing-and-quality/           # Testing strategies and code quality tools
+├── tools-and-ecosystem/           # Python tooling and package management
+├── performance-and-optimization/  # Profiling and optimization techniques
+├── experiments/                   # Hands-on coding sandbox
+├── notes/                         # Personal learning reflections
+└── resources.md                   # Resources for Python and SWE
 ```
 
 ## Table of Contents
 
 ### [Overview](overview/)
 
-- What is Python and why learn it?
-- Python's design philosophy
-- Python's role in software engineering
-- The Python execution model
-- Mental models for thinking in Python
+- **Introduction to Python:** Python’s background, strengths, real-world uses, and its uniqueness
+- **Design Philosophy:** The Zen of Python and principles for writing clean, Pythonic code
+- **Execution Model** How Python runs code, from source to bytecode and execution
+- **Mental Models** Core concepts like objects, scope, and mutability for reasoning about code
 
 ### [Fundamentals](fundamentals/)
 
-- **Syntax basics**: Variables, operators, comments, print, input, naming conventions
-- **Data types**: int, float, str, bool, None -- characteristics and operations
-- **Control flow**: if/elif/else statements, for, while, match, break/continue/pass
-- **Data structures**: lists, tuples, dicts, sets -- deep understanding
-- **Functions**: defining functions, parameters, return values, scope
-- **File I/O**: file operations, CSV, JSON, pathlib
-- **Basic error handling**: try/except blocks, common exceptions
-- **Modules and imports**: using modules, import statements
+- **Syntax and Data Types:** Variables, core data types, operators, comments, naming, and basic I/O
+- **Control Flow:** Conditionals, loops, match statements, and flow control keywords
+- **Data Structures:** Lists, tuples, dictionaries, and sets -- features and when to use them
+- **Functions:** Defining functions, parameters, returns, scope, and flexible arguments
+- **File Operations:** Reading/writing files, common formats, and basic file handling tools
+- **Error Handling:** Using exceptions, `try`/`except`, and raising errors properly
+- **Modules and Imports:** Importing modules, creating your own, and organizing code
 
 ### [Core Concepts](core-concepts/)
 
-- **List comprehensions**: creating lists with concise syntax
-- **Lambda functions**: anonymous functions and when to use them
-- **Map, filter, reduce**: functional programming basics
-- **Object-oriented Python**: classes, objects, methods, attributes
-- **Inheritance and composition**: building class hierarchies
-- **Iterators and generators**: lazy evaluation, iteration protocol
-- **Decorators**: function decorators, class decorators, practical patterns
-- **Context managers**: resource management, custom context managers
-- **Advanced functions**: closures, first-class functions, namespaces
-- **Modules and packages**: import system, package structure, namespaces
+- **Comprehensions and Functional Tools:** Comprehensions, generator expressions, and functional tools
+- **Object-Oriented Programming:** Classes, methods, inheritance, polymorphism, and class design principles
+- **Advanced Functions:** Closures, decorators, nested functions, and functional patterns
+- **Iterators and Generators:** Iteration protocol, `yield`, lazy evaluation, and custom iterators
+- **Context Managers:** Using `with`, creating custom context managers, and managing resources
+- **Modules and Packages:** Import system, package structure, and organizing larger projects
 
 ### [Advanced Concepts](advanced-concepts/)
 
-- **Type systems**: static typing with type hints, mypy, protocols
-- **Metaprogramming**: metaclasses, class decorators, dynamic class creation
-- **Descriptors**: understanding attribute access, property implementation
-- **Abstract base classes**: interface design, structural vs nominal subtyping
-- **Memory management**: garbage collection, reference counting, memory profiling
-- **Concurrency**: threading, multiprocessing, asyncio, event loops
-- **Python internals**: CPython implementation, bytecode, GIL
+- **Type Systems:** Type hints, generics, protocols, and static type checking tools
+- **Metaprogramming:** Metaclasses, dynamic class creation, and runtime class modification
+- **Descriptors and Properties:** Attribute access, descriptor protocol, and managed attributes
+- **Abstract Base Classes:** Defining interfaces with `abc`, abstract methods, and extensible designs
+- **Memory Management:** Garbage collection, object lifecycle, weak references, and optimization
+- **Concurrency:** Threading, multiprocessing, asyncio, and choosing the right model
+- **Python Internals:** Bytecode, GIL, CPython details, and performance fundamentals
 
 ### [Patterns and Practices](patterns-and-practices/)
 
-- **Code style basics**: PEP 8, naming conventions, readability
-- **Writing clean code**: meaningful variable names, small functions
-- **DRY principle**: Don't Repeat Yourself
-- **Comments and documentation**: when and how to document code
-- **Logging**: logging best practices, log levels, handlers, formatters, production logging
-- **Code organization**: project layout, module design, separation of concerns
-- **Design patterns**: creational, structural, behavioral patterns in Python
-- **SOLID principles**: applied to Python code
-- **Refactoring**: techniques for improving code structure
-- **API design**: public interfaces, versioning, backward compatibility
+- **Code Style and Standards:** PEP 8 guidelines, naming conventions, and formatting tools for consistent code
+- **Writing Clean Code:** Clear naming, small focused functions, DRY principles, and readability
+- **Documentation:** Effective docstrings, comments, READMEs, and documentation tools
+- **Logging:** Log levels, configuration, formatting, and production best practices
+- **Code Organization:** Project structure, module design, and clean architecture
+- **Design Patterns:** Creational, structural, and behavioral patterns in Python
+- **SOLID Principles:** Applying core object-oriented design principles in Python
+- **Refactoring:** Identifying code smells and improving code safely and incrementally
 
 ### [Testing and Quality](testing-and-quality/)
 
-- **Why test your code**: understanding the importance of testing
-- **Writing your first test**: basic test structure and assertions
-- **Debugging basics**: using print statements, understanding error messages
-- **Testing philosophy**: test-driven development, behavior-driven development
-- **Unit testing**: pytest, unittest, test design, fixtures, parameterization
-- **Integration testing**: testing system boundaries, test doubles
-- **Mocking and stubbing**: unittest.mock, testing external dependencies
-- **Property-based testing**: hypothesis, generative testing
-- **Test coverage**: measuring coverage, coverage-driven development
-- **Code quality**: linting (ruff, pylint), formatting (black), complexity metrics
-- **Type checkers**: mypy, pyright, configuration, incremental adoption
-- **Development tools**: ruff, black, isort, pre-commit hooks
-- **Debugging tools**: pdb, debugging strategies, post-mortem debugging
+- **Testing Fundamentals:** Test types, structure, organization, and best practices
+- **Unit Testing:** Using pytest and unittest, fixtures, mocking, and assertions
+- **Testing Strategies:** TDD, BDD, coverage, and testing edge cases effectively
+- **Mocking and Fixtures:** Test doubles, patching, fixtures, and isolating dependencies
+- **Advanced Testing:** Integration, property-based, async, and database testing
+- **Code Quality Tools:** Linting, formatting, static analysis, and workflow integration
+- **Type Checking:** Using `mypy` and `pyright` for gradual static typing
+- **Debugging Techniques:** `pdb`, IDE tools, stack traces, and systematic debugging
 
 ### [Tools and Ecosystem](tools-and-ecosystem/)
 
-- **Python setup and installation**: managing Python versions, installation methods
-- **Running Python code**: scripts, interactive mode, REPL, notebooks
-- **Installing packages with pip**: using pip install, requirements.txt basics
-- **Package management**: pip, poetry, uv, requirements management
-- **Virtual environments**: venv, virtualenv, conda, environment isolation
-- **Version control with Git**: commits, branches, staging, history, Git fundamentals
-- **Git workflows**: branching strategies, pull requests, collaboration patterns
-- **Remote repositories**: GitHub, GitLab, pushing/pulling, authentication
-- **CI/CD**: GitHub Actions, GitLab CI, automated testing and deployment
-- **Development environments**: IDEs, editors, Jupyter notebooks
+- **Python Setup and Installation:** Installing Python, managing versions, and choosing the right setup
+- **Development Environments:** IDEs, editors, REPL, notebooks, and productivity configuration
+- **Running Python Code:** Scripts, interactive mode, modules, and execution patterns
+- **Package Management:** Using pip, poetry, uv, and managing dependencies
+- **Virtual Environments:** Creating isolated environments for project dependencies
+- **Version Control with Git:** Git basics, commits, branches, and tracking changes
+- **Git Workflows:** Branching strategies, pull requests, and team collaboration models
+- **Remote Repositories:** Working with GitHub/GitLab, remotes, and collaboration tools
+- **CI/CD:** Automated testing and deployment with modern CI/CD pipelines
 
 ### [Performance and Optimization](performance-and-optimization/)
 
-- **Profiling tools**: cProfile, line_profiler, memory_profiler
-- **Writing efficient code**: basic performance considerations for beginners
-- **When to optimize**: avoiding premature optimization
-- **Choosing data structures**: list vs dict vs set for different use cases
-- **Profiling techniques**: identifying bottlenecks, performance measurement
-- **Algorithmic optimization**: time complexity, space complexity, trade-offs
-- **Memory optimization**: reducing memory footprint, garbage collection tuning
-- **Caching strategies**: memoization, LRU cache, application-level caching
-- **Parallelism**: when and how to parallelize, overhead considerations
-- **Native extensions**: using Cython, calling C libraries, performance boundaries
+- **Performance Fundamentals:** Writing efficient code, avoiding premature optimization, and understanding trade-offs
+- **Data Structure Performance:** Performance traits of built-in structures and choosing the right one
+- **Profiling and Measurement:** Using profiling and benchmarking tools to measure performance
+- **Optimization Techniques:** Caching, lazy evaluation, generators, and common optimization patterns
+- **Memory Optimization:** Reducing memory usage and understanding Python’s memory model
+- **Parallel and Concurrent Execution:** Multiprocessing, threading, `asyncio`, and GIL considerations
+- **Native Extensions:** Using Cython, ctypes/cffi, or Numba for performance-critical code
 
 ## Learning Principles
 
-**Depth Over Breadth**: Understand core concepts deeply rather than superficially covering many topics. One well-understood pattern is more valuable than ten memorized recipes.
-
-**Concepts Over Tools**: Focus on the _why_ and the _what_, not just the _how_. Tools change, but principles endure. Understand the problem a tool solves before learning the tool.
-
-**Practice and Reflection**: Knowledge without application is incomplete. Experiment, fail, reflect, and refine. Use this repository to document both successes and lessons from failures.
-
-**Progressive Refinement**: Your understanding will evolve. Revisit old notes, refactor them, and build on earlier foundations. This repository grows with you.
-
-**Connection Building**: Software engineering is interconnected. Look for relationships between patterns, principles, and practices. Build a web of understanding, not isolated facts.
+- **Depth Over Breadth**: Understand core concepts deeply rather than superficially covering many topics. One well-understood pattern is more valuable than ten memorized recipes.
+- **Concepts Over Tools**: Focus on the _why_ and the _what_, not just the _how_. Tools change, but principles endure. Understand the problem a tool solves before learning the tool.
+- **Practice and Reflection**: Knowledge without application is incomplete. Experiment, fail, reflect, and refine. Use this repository to document both successes and lessons from failures.
+- **Progressive Refinement**: Your understanding will evolve. Revisit old notes, refactor them, and build on earlier foundations. This repository grows with you.
+- **Connection Building**: Software engineering is interconnected. Look for relationships between patterns, principles, and practices. Build a web of understanding, not isolated facts.
 
 ## Contribution to Your Growth
 

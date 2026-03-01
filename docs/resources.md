@@ -41,6 +41,7 @@
 <!-- ### Code Style and Standards -->
 <!-- ### Writing Clean Code -->
 <!-- ### Documentation -->
+<!-- ### Logging -->
 <!-- ### Code Organization -->
 <!-- ### Design Patterns -->
 <!-- ### SOLID Principles -->
