@@ -1,0 +1,1174 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Notes related to Python and software engineering.">
+      
+      
+        <meta name="author" content="Danish Ahmed">
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="zensical-0.0.24">
+    
+    
+      
+        <title>Code maturity checklist - Python and SWE</title>
+      
+    
+    
+      
+        
+      
+      <link rel="stylesheet" href="../../assets/stylesheets/modern/main.28978c9b.min.css">
+      
+        
+          
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/modern/palette.dfe2e883.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i%7CJetbrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Jetbrains Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,a=__md_scope)=>JSON.parse(t.getItem(a.pathname+"."+e)),__md_set=(e,t,a=localStorage,_=__md_scope)=>{try{a.setItem(_.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="red" data-md-color-accent="red">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Python and SWE" class="md-header__button md-logo" aria-label="Python and SWE" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 7v14M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-menu" viewBox="0 0 24 24"><path d="M4 5h16M4 12h16M4 19h16"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Python and SWE
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Code maturity checklist
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="none" data-md-color-scheme="slate" data-md-color-primary="red" data-md-color-accent="red"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-search" viewBox="0 0 24 24"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog" aria-label="Search">
+  <button type="button" class="md-search__button">
+    Search
+  </button>
+</div>
+      
+    
+    <div class="md-header__source">
+      
+    </div>
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Python and SWE" class="md-nav__button md-logo" aria-label="Python and SWE" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 7v14M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>
+
+    </a>
+    Python and SWE
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../overview/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../fundamentals/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../core-concepts/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Core Concepts
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../advanced-concepts/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced Concepts
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Patterns and Practices
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../testing-and-quality/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Testing and Quality
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../tools-and-ecosystem/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools and Ecosystem
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../performance-and-optimization/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Performance and Optimization
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <h1>Code maturity checklist</h1>
+
+<p># Code Maturity Self-Assessment Checklist</p>
+<p>A quick reference guide to assess your code's maturity level and identify what phase you're at (or should be at).</p>
+<blockquote>
+<p>**See the comprehensive guide**: [Code Maturity Progression](../overview/code-maturity-progression.md)</p>
+</blockquote>
+<p>## How to Use This Checklist</p>
+<p>1. Read through each phase section</p>
+<p>2. Check off items that apply to your current project</p>
+<p>3. If you have most items in a phase ✅, you're at that level</p>
+<p>4. If you're missing critical items for your needs, consider leveling up</p>
+<p>5. Don't aim for the highest phase—aim for the _right_ phase</p>
+<hr />
+<p>## Phase 1: Foundational Code</p>
+<p>**Goal**: Working script → Organized functions</p>
+<p>### ✅ Checklist</p>
+<p>- [ ] Code runs without errors</p>
+<p>- [ ] Functions organized with clear purposes</p>
+<p>- [ ] Command-line arguments accepted (argparse)</p>
+<p>- [ ] Basic error handling (try/except)</p>
+<p>- [ ] <code>if \_\_name\_\_ == "\_\_main\_\_":</code> guard present</p>
+<p>- [ ] Simple README with usage instructions</p>
+<p>### 🎯 You're Ready for This If:</p>
+<p>- Learning Python</p>
+<p>- Building prototypes</p>
+<p>- Writing one-off scripts</p>
+<p>- No one else needs to run your code</p>
+<p>### ⚠️ Pain Points That Suggest Moving On:</p>
+<p>- Copying code between scripts</p>
+<p>- Losing data between runs</p>
+<p>- Hard to debug without context</p>
+<p>- Others want to use your code</p>
+<hr />
+<p>## Phase 2: Modular \&amp; Installable</p>
+<p>**Goal**: Package structure → pip-installable</p>
+<p>### ✅ Checklist</p>
+<p>- [ ] Code organized into modules (<code>module/file.py</code> structure)</p>
+<p>- [ ] Configuration separated from code</p>
+<p>- [ ] <code>requirements.txt</code> for dependencies</p>
+<p>- [ ] Logging instead of print statements</p>
+<p>- [ ] <code>pyproject.toml</code> or <code>setup.py</code> for installation</p>
+<p>- [ ] Entry points for CLI commands</p>
+<p>- [ ] Virtual environment used</p>
+<p>- [ ] <code>.gitignore</code> configured</p>
+<p>- [ ] Docstrings on functions/classes</p>
+<p>- [ ] Type hints on function signatures</p>
+<p>### 🎯 You're Ready for This If:</p>
+<p>- Code will be maintained</p>
+<p>- Sharing with team members</p>
+<p>- Need to reuse code</p>
+<p>- Managing dependencies</p>
+<p>### ⚠️ Pain Points That Suggest Moving On:</p>
+<p>- Bugs appearing in production</p>
+<p>- Unsure if changes break things</p>
+<p>- Code style inconsistent</p>
+<p>- Refactoring feels risky</p>
+<hr />
+<p>## Phase 3: Quality Engineering</p>
+<p>**Goal**: Tests → QA tools → Robust errors</p>
+<p>### ✅ Checklist</p>
+<p>**Testing**:</p>
+<p>- [ ] Unit tests with pytest</p>
+<p>- [ ] Test coverage &gt;70%</p>
+<p>- [ ] Integration tests for workflows</p>
+<p>- [ ] Test fixtures and mocks</p>
+<p>- [ ] CI/CD runs tests automatically</p>
+<p>**Quality Assurance**:</p>
+<p>- [ ] Code formatter (Black/Ruff) configured</p>
+<p>- [ ] Linter (Ruff/pylint) configured</p>
+<p>- [ ] Type checking (mypy) passing</p>
+<p>- [ ] Pre-commit hooks enforcing standards</p>
+<p>- [ ] Code review process established</p>
+<p>**Error Handling**:</p>
+<p>- [ ] Custom exception classes defined</p>
+<p>- [ ] Comprehensive error handling with context</p>
+<p>- [ ] Structured logging (structlog or similar)</p>
+<p>- [ ] Retry logic for external services</p>
+<p>- [ ] Graceful degradation implemented</p>
+<p>### 🎯 You're Ready for This If:</p>
+<p>- Code used by others</p>
+<p>- Team collaboration</p>
+<p>- Need refactoring confidence</p>
+<p>- Production readiness required</p>
+<p>### ⚠️ Pain Points That Suggest Moving On:</p>
+<p>- Deploying to production</p>
+<p>- Multiple environments to manage</p>
+<p>- Can't debug production issues</p>
+<p>- No visibility into system behavior</p>
+<hr />
+<p>## Phase 4: Production-Ready Configuration</p>
+<p>**Goal**: Config management → Observability</p>
+<p>### ✅ Checklist</p>
+<p>**Configuration**:</p>
+<p>- [ ] Environment-based configs (dev/staging/prod)</p>
+<p>- [ ] Secret management (not in code/git)</p>
+<p>- [ ] Configuration validation (Pydantic or similar)</p>
+<p>- [ ] <code>.env</code> files with dotenv</p>
+<p>- [ ] Feature flags for gradual rollouts</p>
+<p>**Observability**:</p>
+<p>- [ ] Structured logging to centralized system</p>
+<p>- [ ] Metrics collection (Prometheus/StatsD)</p>
+<p>- [ ] Distributed tracing (OpenTelemetry)</p>
+<p>- [ ] Health check endpoints</p>
+<p>- [ ] Performance profiling capability</p>
+<p>- [ ] Alerting on critical errors</p>
+<p>### 🎯 You're Ready for This If:</p>
+<p>- Deploying to production</p>
+<p>- Real users depending on it</p>
+<p>- Multiple environments</p>
+<p>- Need to debug live issues</p>
+<p>### ⚠️ Pain Points That Suggest Moving On:</p>
+<p>- Response times too slow</p>
+<p>- Can't handle traffic loads</p>
+<p>- Database is bottleneck</p>
+<p>- Need to scale horizontally</p>
+<hr />
+<p>## Phase 5: Performance \&amp; Scale</p>
+<p>**Goal**: Optimization → Containerization</p>
+<p>### ✅ Checklist</p>
+<p>**Performance**:</p>
+<p>- [ ] Async/await for I/O operations</p>
+<p>- [ ] Database connection pooling</p>
+<p>- [ ] Caching strategy (Redis/in-memory)</p>
+<p>- [ ] Background job processing</p>
+<p>- [ ] Database query optimization</p>
+<p>- [ ] Rate limiting implemented</p>
+<p>**Containerization**:</p>
+<p>- [ ] Dockerfile with multi-stage builds</p>
+<p>- [ ] Docker Compose for local dev</p>
+<p>- [ ] Optimized image size (&lt;100MB preferred)</p>
+<p>- [ ] <code>.dockerignore</code> configured</p>
+<p>- [ ] Non-root user in container</p>
+<p>- [ ] Container security scanning</p>
+<p>### 🎯 You're Ready for This If:</p>
+<p>- Performance critical</p>
+<p>- High concurrent traffic</p>
+<p>- Need horizontal scaling</p>
+<p>- Multiple services to coordinate</p>
+<p>### ⚠️ Pain Points That Suggest Moving On:</p>
+<p>- Manual deployments error-prone</p>
+<p>- Need frequent deployments</p>
+<p>- Want zero-downtime updates</p>
+<p>- Infrastructure not reproducible</p>
+<hr />
+<p>## Phase 6: Infrastructure \&amp; Deployment</p>
+<p>**Goal**: IaC → Automated deployment</p>
+<p>### ✅ Checklist</p>
+<p>**Infrastructure as Code**:</p>
+<p>- [ ] Terraform/CloudFormation resources defined</p>
+<p>- [ ] Kubernetes manifests or Helm charts</p>
+<p>- [ ] Auto-scaling rules configured</p>
+<p>- [ ] Load balancer configuration</p>
+<p>- [ ] Database migration management (Alembic)</p>
+<p>**CI/CD Pipeline**:</p>
+<p>- [ ] Automated testing in pipeline</p>
+<p>- [ ] Automated Docker builds</p>
+<p>- [ ] Automated deployments</p>
+<p>- [ ] Blue-green or canary deployments</p>
+<p>- [ ] Automated rollback on failure</p>
+<p>- [ ] Database migration automation</p>
+<p>- [ ] Secrets rotation strategy</p>
+<p>### 🎯 You're Ready for This If:</p>
+<p>- Deploying multiple times/day</p>
+<p>- Zero-downtime requirement</p>
+<p>- Multiple production environments</p>
+<p>- Need reproducible infrastructure</p>
+<p>### ⚠️ Pain Points That Suggest Moving On:</p>
+<p>- System is business-critical</p>
+<p>- Need 99.9%+ uptime</p>
+<p>- Compliance requirements</p>
+<p>- Multi-region needed</p>
+<hr />
+<p>## Phase 7: Operations \&amp; Enterprise</p>
+<p>**Goal**: SRE practices → Enterprise features</p>
+<p>### ✅ Checklist</p>
+<p>**Monitoring \&amp; Maintenance**:</p>
+<p>- [ ] SLA/SLO definitions with alerting</p>
+<p>- [ ] On-call rotation established</p>
+<p>- [ ] Runbooks for common issues</p>
+<p>- [ ] Incident response procedures</p>
+<p>- [ ] Post-mortem process</p>
+<p>- [ ] Performance regression detection</p>
+<p>- [ ] Cost monitoring and optimization</p>
+<p>**Enterprise Features**:</p>
+<p>- [ ] Multi-region deployment</p>
+<p>- [ ] Compliance certifications (SOC2/HIPAA/GDPR)</p>
+<p>- [ ] Audit logging for all actions</p>
+<p>- [ ] RBAC (Role-Based Access Control)</p>
+<p>- [ ] Data privacy and retention policies</p>
+<p>- [ ] Chaos engineering testing</p>
+<p>- [ ] Comprehensive architecture documentation</p>
+<p>- [ ] API versioning and compatibility guarantees</p>
+<p>- [ ] Deprecation policies and communication</p>
+<p>### 🎯 You're Ready for This If:</p>
+<p>- Mission-critical system</p>
+<p>- Enterprise customers with SLAs</p>
+<p>- Regulatory compliance needed</p>
+<p>- Multi-region availability required</p>
+<p>- 24/7 on-call team</p>
+<hr />
+<p>## Quick Decision Tree</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Are you learning or prototyping?
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>├─ YES → Phase 1
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>└─ NO → Will this code be maintained long-term?
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>&amp;nbsp;   ├─ NO → Phase 1
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>&amp;nbsp;   └─ YES → Are multiple people using/developing it?
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>&amp;nbsp;       ├─ NO → Phase 2
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>&amp;nbsp;       └─ YES → Is it in production with real users?
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>&amp;nbsp;           ├─ NO → Phase 3
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>&amp;nbsp;           └─ YES → Do you have performance/scale issues?
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>&amp;nbsp;               ├─ NO → Phase 4
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>&amp;nbsp;               └─ YES → Do you deploy frequently (daily+)?
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>&amp;nbsp;                   ├─ NO → Phase 5
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>&amp;nbsp;                   └─ YES → Is it business-critical with SLAs?
+</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>
+</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>&amp;nbsp;                       ├─ NO → Phase 6
+</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>
+</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>&amp;nbsp;                       └─ YES → Phase 7
+</span></code></pre></div>
+<hr />
+<p>## Common Mistakes to Avoid</p>
+<p>### ❌ Over-Engineering Early</p>
+<p>**Problem**: Jumping to Phase 6-7 for a prototype</p>
+<p>**Solution**: Start at Phase 1-2, level up as you feel pain</p>
+<p>### ❌ Under-Engineering for Production</p>
+<p>**Problem**: Phase 1 code serving real users</p>
+<p>**Solution**: At minimum reach Phase 4 before production</p>
+<p>### ❌ Skipping Testing</p>
+<p>**Problem**: Moving from Phase 2 directly to Phase 5</p>
+<p>**Solution**: Phase 3 is critical for confidence and maintainability</p>
+<p>### ❌ Ignoring Observability</p>
+<p>**Problem**: Production system with no logging/metrics</p>
+<p>**Solution**: Phase 4 observability is essential for debugging</p>
+<p>### ❌ Manual Everything in Production</p>
+<p>**Problem**: Phase 5 scale without Phase 6 automation</p>
+<p>**Solution**: Automation prevents mistakes at scale</p>
+<hr />
+<p>## ML/AI Projects: Additional Checklist Items</p>
+<p>If you're building ML/AI applications, add these to relevant phases:</p>
+<p>### Phase 3-4: ML Development</p>
+<p>- [ ] Experiment tracking (MLflow/W\&amp;B)</p>
+<p>- [ ] Data versioning (DVC/LakeFS)</p>
+<p>- [ ] Model versioning</p>
+<p>- [ ] Reproducible training pipelines</p>
+<p>### Phase 5-6: ML Operations</p>
+<p>- [ ] Model registry</p>
+<p>- [ ] Feature store</p>
+<p>- [ ] A/B testing framework</p>
+<p>- [ ] Model monitoring (drift detection)</p>
+<p>- [ ] Automated retraining pipelines</p>
+<p>### Phase 7: ML Enterprise</p>
+<p>- [ ] Model explainability (SHAP/LIME)</p>
+<p>- [ ] Fairness and bias monitoring</p>
+<p>- [ ] Model governance policies</p>
+<p>- [ ] Regulatory compliance for ML</p>
+<hr />
+<p>## Next Steps</p>
+<p>1. **Identify your current phase** using the checklists above</p>
+<p>2. **Determine your target phase** based on your needs (not the highest!)</p>
+<p>3. **Review the comprehensive guide** for implementation details: [Code Maturity Progression](../overview/code-maturity-progression.md)</p>
+<p>4. **Pick 2-3 missing items** from your target phase to implement next</p>
+<p>5. **Iterate**: Level up gradually, not all at once</p>
+<p>**Remember**: The goal isn't to reach Phase 7. The goal is to be at the right phase for your current needs.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-circle-arrow-up" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m16 12-4-4-4 4M12 16V8"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Arc Systems
+
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      
+      <script id="__config" type="application/json">{"annotate":null,"base":"../..","features":["announce.dismiss","content.code.annotate","content.code.copy","content.code.select","content.footnote.tooltips","content.tabs.link","content.tooltips","navigation.footer","navigation.indexes","navigation.instant","navigation.instant.prefetch","navigation.instant.progress","navigation.path","navigation.prune","navigation.top","navigation.tracking","search.highlight","toc.follow"],"search":"../../assets/javascripts/workers/search.e2d2d235.min.js","tags":null,"translations":{"clipboard.copied":"Copied to clipboard","clipboard.copy":"Copy to clipboard","search.result.more.one":"1 more on this page","search.result.more.other":"# more on this page","search.result.none":"No matching documents","search.result.one":"1 matching document","search.result.other":"# matching documents","search.result.placeholder":"Type to start searching","search.result.term.missing":"Missing","select.version":"Select version"},"version":null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.16f8adc2.min.js"></script>
+      
+    
+  </body>
+</html>

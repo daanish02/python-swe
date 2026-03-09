@@ -74,8 +74,8 @@ python-swe-lab/
 ├── testing-and-quality/           # Testing strategies and code quality tools
 ├── tools-and-ecosystem/           # Python tooling and package management
 ├── performance-and-optimization/  # Profiling and optimization techniques
-├── experiments/                   # Hands-on coding sandbox
-├── notes/                         # Personal learning reflections
+├── experiments/                   # Experiments related to Python and SWE
+├── notes/                         # Personal learnings
 └── resources.md                   # Resources for Python and SWE
 ```
 
@@ -85,8 +85,9 @@ python-swe-lab/
 
 - **Introduction to Python:** Python’s background, strengths, real-world uses, and its uniqueness
 - **Design Philosophy:** The Zen of Python and principles for writing clean, Pythonic code
-- **Execution Model** How Python runs code, from source to bytecode and execution
-- **Mental Models** Core concepts like objects, scope, and mutability for reasoning about code
+- **Execution Model:** How Python runs code, from source to bytecode and execution
+- **Mental Models:** Core concepts like objects, scope, and mutability for reasoning about code
+- **Code Maturity Progression:** Basic scripts to production-grade systems
 
 ### [Fundamentals](fundamentals/)
 
@@ -119,6 +120,7 @@ python-swe-lab/
 
 ### [Patterns and Practices](patterns-and-practices/)
 
+- **Code Maturity Assessment:** Quick checklist to identify your current phase
 - **Code Style and Standards:** PEP 8 guidelines, naming conventions, and formatting tools for consistent code
 - **Writing Clean Code:** Clear naming, small focused functions, DRY principles, and readability
 - **Documentation:** Effective docstrings, comments, READMEs, and documentation tools

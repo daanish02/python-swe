@@ -8,9 +8,25 @@ You'll learn testing philosophies, practical testing techniques, debugging strat
 
 ## Contents
 
+### [How to Write Tests](how-to-write-tests.md)
+
+**Start here if you've never written tests before.** Complete beginner's guide to writing tests: how to choose what to test, how to pick test values, how to determine assertions, how many tests are enough, common mistakes to avoid, quick reference cheat sheet, and practice exercises.
+
+### [Test Examples Walkthrough](test-examples-walkthrough.md)
+
+10 complete examples showing the thinking process from function to tests. Each example includes detailed analysis, test identification, value selection rationale, and complete test implementations. Perfect for learning by example.
+
+### [How to Write Tests](how-to-write-tests.md)
+
+**Start here if you've never written tests before.** Complete beginner's guide to writing tests: how to choose what to test, how to pick test values, how to determine assertions, how many tests are enough, common mistakes to avoid, quick reference cheat sheet, and practice exercises.
+
+### [Test Examples Walkthrough](test-examples-walkthrough.md)
+
+10 complete examples showing the thinking process from function to tests. Each example includes detailed analysis, test identification, value selection rationale, and complete test implementations. Perfect for learning by example.
+
 ### [Testing Fundamentals](testing-fundamentals.md)
 
-Why testing matters, types of tests (unit, integration, end-to-end), test structure (Arrange-Act-Assert), writing your first tests, test organization, and testing best practices.
+Why testing matters, types of tests (unit, integration, end-to-end), test structure (Arrange-Act-Assert), writing your first tests, test organization, testing best practices, and a systematic Test Discovery Checklist for identifying what to test.
 
 ### [Unit Testing](unit-testing.md)
 
@@ -18,7 +34,7 @@ Using pytest and unittest frameworks, test discovery, fixtures, parameterized te
 
 ### [Testing Strategies](testing-strategies.md)
 
-Test-Driven Development (TDD), Behavior-Driven Development (BDD), testing patterns, test coverage (what it means and doesn't mean), edge cases and boundary conditions.
+Test-Driven Development (TDD), Behavior-Driven Development (BDD), testing patterns, test coverage (what it means and doesn't mean), edge cases and boundary conditions, and a 4-step systematic process for analyzing functions for edge cases with practice exercises.
 
 ### [Mocking and Fixtures](mocking-and-fixtures.md)
 

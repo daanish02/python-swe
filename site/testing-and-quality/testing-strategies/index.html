@@ -985,6 +985,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#how-to-analyze-a-function-for-edge-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to Analyze a Function for Edge Cases
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#boundary-testing" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1025,6 +1036,56 @@
       
     </span>
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#practice-exercises-finding-edge-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practice Exercises: Finding Edge Cases
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Practice Exercises: Finding Edge Cases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercise-1-string-truncation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 1: String Truncation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-2-calculate-grade-average" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 2: Calculate Grade Average
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-3-find-common-elements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 3: Find Common Elements
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1640,6 +1701,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#how-to-analyze-a-function-for-edge-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to Analyze a Function for Edge Cases
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#boundary-testing" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1680,6 +1752,56 @@
       
     </span>
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#practice-exercises-finding-edge-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practice Exercises: Finding Edge Cases
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Practice Exercises: Finding Edge Cases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercise-1-string-truncation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 1: String Truncation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-2-calculate-grade-average" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 2: Calculate Grade Average
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-3-find-common-elements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 3: Find Common Elements
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -2100,129 +2222,452 @@
 </span></code></pre></div>
 <h2 id="edge-cases-and-boundary-conditions">Edge Cases and Boundary Conditions</h2>
 <p><strong>Edge case</strong>: An unusual or extreme input that might cause unexpected behavior (e.g., empty lists, zero, negative numbers, very large values).</p>
+<h3 id="how-to-analyze-a-function-for-edge-cases">How to Analyze a Function for Edge Cases</h3>
+<p>Follow this systematic process to identify edge cases:</p>
+<p><strong>Step 1: Identify the input types</strong></p>
+<p>Look at each parameter and note its type:</p>
+<ul>
+<li>Numbers (int, float)</li>
+<li>Strings</li>
+<li>Collections (list, dict, set)</li>
+<li>Objects</li>
+<li>Booleans</li>
+<li>Optional values (might be None)</li>
+</ul>
+<p><strong>Step 2: For each input, ask the edge case questions</strong></p>
+<p>For <strong>numbers</strong>:</p>
+<ul>
+<li>What about zero?</li>
+<li>What about negative values?</li>
+<li>What about very large values?</li>
+<li>What about floats vs ints?</li>
+<li>What about special values (infinity, NaN)?</li>
+</ul>
+<p>For <strong>strings</strong>:</p>
+<ul>
+<li>What about empty string ""?</li>
+<li>What about single character?</li>
+<li>What about very long strings?</li>
+<li>What about special characters?</li>
+<li>What about None?</li>
+</ul>
+<p>For <strong>collections</strong> (lists, dicts, sets):</p>
+<ul>
+<li>What about empty collection?</li>
+<li>What about single item?</li>
+<li>What about very large collection?</li>
+<li>What about None?</li>
+<li>What about duplicates (for lists)?</li>
+<li>What about missing keys (for dicts)?</li>
+</ul>
+<p>For <strong>booleans</strong>:</p>
+<ul>
+<li>Test True</li>
+<li>Test False</li>
+<li>Test None (if allowed)</li>
+</ul>
+<p><strong>Step 3: Identify boundaries</strong></p>
+<p>Look for any limits, thresholds, or ranges in the function:</p>
+<ul>
+<li>Age must be 18+? → Test 17, 18, 19</li>
+<li>String max length 50? → Test 49, 50, 51</li>
+<li>Price must be positive? → Test 0, -1, 0.01</li>
+<li>List max size 100? → Test 99, 100, 101</li>
+</ul>
+<p><strong>Step 4: Consider error conditions</strong></p>
+<p>What should cause errors?</p>
+<ul>
+<li>Invalid inputs</li>
+<li>Violated constraints</li>
+<li>Out-of-range values</li>
+</ul>
+<p><strong>Example application:</strong></p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">filter_products</span><span class="p">(</span><span class="n">products</span><span class="p">,</span> <span class="n">min_price</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">max_price</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">in_stock</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Filter products by price and availability.&quot;&quot;&quot;</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>    <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>    <span class="k">for</span> <span class="n">product</span> <span class="ow">in</span> <span class="n">products</span><span class="p">:</span>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>        <span class="k">if</span> <span class="n">product</span><span class="o">.</span><span class="n">price</span> <span class="o">&lt;</span> <span class="n">min_price</span><span class="p">:</span>
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>            <span class="k">continue</span>
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>        <span class="k">if</span> <span class="n">max_price</span> <span class="ow">and</span> <span class="n">product</span><span class="o">.</span><span class="n">price</span> <span class="o">&gt;</span> <span class="n">max_price</span><span class="p">:</span>
+</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>            <span class="k">continue</span>
+</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>        <span class="k">if</span> <span class="n">in_stock</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">product</span><span class="o">.</span><span class="n">in_stock</span><span class="p">:</span>
+</span><span id="__span-13-10"><a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>            <span class="k">continue</span>
+</span><span id="__span-13-11"><a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>        <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">product</span><span class="p">)</span>
+</span><span id="__span-13-12"><a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a>    <span class="k">return</span> <span class="n">result</span>
+</span><span id="__span-13-13"><a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a>
+</span><span id="__span-13-14"><a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a><span class="c1"># Step 1: Identify inputs</span>
+</span><span id="__span-13-15"><a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a><span class="c1"># - products: list</span>
+</span><span id="__span-13-16"><a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a><span class="c1"># - min_price: number (default 0)</span>
+</span><span id="__span-13-17"><a id="__codelineno-13-17" name="__codelineno-13-17" href="#__codelineno-13-17"></a><span class="c1"># - max_price: number or None</span>
+</span><span id="__span-13-18"><a id="__codelineno-13-18" name="__codelineno-13-18" href="#__codelineno-13-18"></a><span class="c1"># - in_stock: boolean</span>
+</span><span id="__span-13-19"><a id="__codelineno-13-19" name="__codelineno-13-19" href="#__codelineno-13-19"></a>
+</span><span id="__span-13-20"><a id="__codelineno-13-20" name="__codelineno-13-20" href="#__codelineno-13-20"></a><span class="c1"># Step 2: Edge case questions</span>
+</span><span id="__span-13-21"><a id="__codelineno-13-21" name="__codelineno-13-21" href="#__codelineno-13-21"></a><span class="c1"># products (list):</span>
+</span><span id="__span-13-22"><a id="__codelineno-13-22" name="__codelineno-13-22" href="#__codelineno-13-22"></a><span class="c1">#   - Empty list? Yes, test</span>
+</span><span id="__span-13-23"><a id="__codelineno-13-23" name="__codelineno-13-23" href="#__codelineno-13-23"></a><span class="c1">#   - Single product? Test</span>
+</span><span id="__span-13-24"><a id="__codelineno-13-24" name="__codelineno-13-24" href="#__codelineno-13-24"></a><span class="c1">#   - None? If should handle, test</span>
+</span><span id="__span-13-25"><a id="__codelineno-13-25" name="__codelineno-13-25" href="#__codelineno-13-25"></a><span class="c1">#</span>
+</span><span id="__span-13-26"><a id="__codelineno-13-26" name="__codelineno-13-26" href="#__codelineno-13-26"></a><span class="c1"># min_price (number):</span>
+</span><span id="__span-13-27"><a id="__codelineno-13-27" name="__codelineno-13-27" href="#__codelineno-13-27"></a><span class="c1">#   - Zero? Yes (default), test</span>
+</span><span id="__span-13-28"><a id="__codelineno-13-28" name="__codelineno-13-28" href="#__codelineno-13-28"></a><span class="c1">#   - Negative? Test</span>
+</span><span id="__span-13-29"><a id="__codelineno-13-29" name="__codelineno-13-29" href="#__codelineno-13-29"></a><span class="c1">#   - Very large? Test</span>
+</span><span id="__span-13-30"><a id="__codelineno-13-30" name="__codelineno-13-30" href="#__codelineno-13-30"></a><span class="c1">#</span>
+</span><span id="__span-13-31"><a id="__codelineno-13-31" name="__codelineno-13-31" href="#__codelineno-13-31"></a><span class="c1"># max_price (number or None):</span>
+</span><span id="__span-13-32"><a id="__codelineno-13-32" name="__codelineno-13-32" href="#__codelineno-13-32"></a><span class="c1">#   - None? Yes (default), test</span>
+</span><span id="__span-13-33"><a id="__codelineno-13-33" name="__codelineno-13-33" href="#__codelineno-13-33"></a><span class="c1">#   - Zero? Test</span>
+</span><span id="__span-13-34"><a id="__codelineno-13-34" name="__codelineno-13-34" href="#__codelineno-13-34"></a><span class="c1">#   - Less than min_price? Test</span>
+</span><span id="__span-13-35"><a id="__codelineno-13-35" name="__codelineno-13-35" href="#__codelineno-13-35"></a><span class="c1">#</span>
+</span><span id="__span-13-36"><a id="__codelineno-13-36" name="__codelineno-13-36" href="#__codelineno-13-36"></a><span class="c1"># in_stock (boolean):</span>
+</span><span id="__span-13-37"><a id="__codelineno-13-37" name="__codelineno-13-37" href="#__codelineno-13-37"></a><span class="c1">#   - True? Test</span>
+</span><span id="__span-13-38"><a id="__codelineno-13-38" name="__codelineno-13-38" href="#__codelineno-13-38"></a><span class="c1">#   - False? Test</span>
+</span><span id="__span-13-39"><a id="__codelineno-13-39" name="__codelineno-13-39" href="#__codelineno-13-39"></a>
+</span><span id="__span-13-40"><a id="__codelineno-13-40" name="__codelineno-13-40" href="#__codelineno-13-40"></a><span class="c1"># Step 3: Boundaries</span>
+</span><span id="__span-13-41"><a id="__codelineno-13-41" name="__codelineno-13-41" href="#__codelineno-13-41"></a><span class="c1"># - Price boundaries: test products at exactly min_price, max_price</span>
+</span><span id="__span-13-42"><a id="__codelineno-13-42" name="__codelineno-13-42" href="#__codelineno-13-42"></a><span class="c1"># - Test products just above/below boundaries</span>
+</span><span id="__span-13-43"><a id="__codelineno-13-43" name="__codelineno-13-43" href="#__codelineno-13-43"></a>
+</span><span id="__span-13-44"><a id="__codelineno-13-44" name="__codelineno-13-44" href="#__codelineno-13-44"></a><span class="c1"># Step 4: Error conditions</span>
+</span><span id="__span-13-45"><a id="__codelineno-13-45" name="__codelineno-13-45" href="#__codelineno-13-45"></a><span class="c1"># - What if max_price &lt; min_price?</span>
+</span><span id="__span-13-46"><a id="__codelineno-13-46" name="__codelineno-13-46" href="#__codelineno-13-46"></a><span class="c1"># - What if products is not a list?</span>
+</span><span id="__span-13-47"><a id="__codelineno-13-47" name="__codelineno-13-47" href="#__codelineno-13-47"></a>
+</span><span id="__span-13-48"><a id="__codelineno-13-48" name="__codelineno-13-48" href="#__codelineno-13-48"></a><span class="c1"># Tests needed:</span>
+</span><span id="__span-13-49"><a id="__codelineno-13-49" name="__codelineno-13-49" href="#__codelineno-13-49"></a><span class="c1"># 1. Empty product list</span>
+</span><span id="__span-13-50"><a id="__codelineno-13-50" name="__codelineno-13-50" href="#__codelineno-13-50"></a><span class="c1"># 2. Single product (in range, in stock)</span>
+</span><span id="__span-13-51"><a id="__codelineno-13-51" name="__codelineno-13-51" href="#__codelineno-13-51"></a><span class="c1"># 3. Multiple products with filtering</span>
+</span><span id="__span-13-52"><a id="__codelineno-13-52" name="__codelineno-13-52" href="#__codelineno-13-52"></a><span class="c1"># 4. No price filters (defaults)</span>
+</span><span id="__span-13-53"><a id="__codelineno-13-53" name="__codelineno-13-53" href="#__codelineno-13-53"></a><span class="c1"># 5. Only min_price filter</span>
+</span><span id="__span-13-54"><a id="__codelineno-13-54" name="__codelineno-13-54" href="#__codelineno-13-54"></a><span class="c1"># 6. Only max_price filter</span>
+</span><span id="__span-13-55"><a id="__codelineno-13-55" name="__codelineno-13-55" href="#__codelineno-13-55"></a><span class="c1"># 7. Both price filters</span>
+</span><span id="__span-13-56"><a id="__codelineno-13-56" name="__codelineno-13-56" href="#__codelineno-13-56"></a><span class="c1"># 8. in_stock=False (show all)</span>
+</span><span id="__span-13-57"><a id="__codelineno-13-57" name="__codelineno-13-57" href="#__codelineno-13-57"></a><span class="c1"># 9. Product at exactly min_price</span>
+</span><span id="__span-13-58"><a id="__codelineno-13-58" name="__codelineno-13-58" href="#__codelineno-13-58"></a><span class="c1"># 10. Product at exactly max_price</span>
+</span><span id="__span-13-59"><a id="__codelineno-13-59" name="__codelineno-13-59" href="#__codelineno-13-59"></a><span class="c1"># 11. max_price &lt; min_price (edge case or error?)</span>
+</span></code></pre></div>
 <h3 id="boundary-testing">Boundary Testing</h3>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="c1"># Test boundaries, not just typical values</span>
-</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="k">def</span><span class="w"> </span><span class="nf">test_age_validation</span><span class="p">():</span>
-</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>    <span class="c1"># Boundary: 18 is minimum</span>
-</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>    <span class="k">assert</span> <span class="n">is_adult</span><span class="p">(</span><span class="mi">17</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">False</span>  <span class="c1"># Below boundary</span>
-</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>    <span class="k">assert</span> <span class="n">is_adult</span><span class="p">(</span><span class="mi">18</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">True</span>   <span class="c1"># At boundary</span>
-</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>    <span class="k">assert</span> <span class="n">is_adult</span><span class="p">(</span><span class="mi">19</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">True</span>   <span class="c1"># Above boundary</span>
-</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>
-</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="k">def</span><span class="w"> </span><span class="nf">test_string_length</span><span class="p">():</span>
-</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>    <span class="c1"># Boundary: max length 50</span>
-</span><span id="__span-13-10"><a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>    <span class="k">assert</span> <span class="n">validate_name</span><span class="p">(</span><span class="s2">&quot;a&quot;</span> <span class="o">*</span> <span class="mi">49</span><span class="p">)</span>  <span class="c1"># Below</span>
-</span><span id="__span-13-11"><a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>    <span class="k">assert</span> <span class="n">validate_name</span><span class="p">(</span><span class="s2">&quot;a&quot;</span> <span class="o">*</span> <span class="mi">50</span><span class="p">)</span>  <span class="c1"># At boundary</span>
-</span><span id="__span-13-12"><a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a>    <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">):</span>
-</span><span id="__span-13-13"><a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a>        <span class="n">validate_name</span><span class="p">(</span><span class="s2">&quot;a&quot;</span> <span class="o">*</span> <span class="mi">51</span><span class="p">)</span>  <span class="c1"># Above</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="c1"># Test boundaries, not just typical values</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="k">def</span><span class="w"> </span><span class="nf">test_age_validation</span><span class="p">():</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>    <span class="c1"># Boundary: 18 is minimum</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>    <span class="k">assert</span> <span class="n">is_adult</span><span class="p">(</span><span class="mi">17</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">False</span>  <span class="c1"># Below boundary</span>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>    <span class="k">assert</span> <span class="n">is_adult</span><span class="p">(</span><span class="mi">18</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">True</span>   <span class="c1"># At boundary</span>
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>    <span class="k">assert</span> <span class="n">is_adult</span><span class="p">(</span><span class="mi">19</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">True</span>   <span class="c1"># Above boundary</span>
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>
+</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a><span class="k">def</span><span class="w"> </span><span class="nf">test_string_length</span><span class="p">():</span>
+</span><span id="__span-14-9"><a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>    <span class="c1"># Boundary: max length 50</span>
+</span><span id="__span-14-10"><a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a>    <span class="k">assert</span> <span class="n">validate_name</span><span class="p">(</span><span class="s2">&quot;a&quot;</span> <span class="o">*</span> <span class="mi">49</span><span class="p">)</span>  <span class="c1"># Below</span>
+</span><span id="__span-14-11"><a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a>    <span class="k">assert</span> <span class="n">validate_name</span><span class="p">(</span><span class="s2">&quot;a&quot;</span> <span class="o">*</span> <span class="mi">50</span><span class="p">)</span>  <span class="c1"># At boundary</span>
+</span><span id="__span-14-12"><a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a>    <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">):</span>
+</span><span id="__span-14-13"><a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a>        <span class="n">validate_name</span><span class="p">(</span><span class="s2">&quot;a&quot;</span> <span class="o">*</span> <span class="mi">51</span><span class="p">)</span>  <span class="c1"># Above</span>
 </span></code></pre></div>
 <h3 id="edge-cases">Edge Cases</h3>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="c1"># Empty collections</span>
-</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="k">def</span><span class="w"> </span><span class="nf">test_sum_empty_list</span><span class="p">():</span>
-</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>    <span class="k">assert</span> <span class="n">sum_numbers</span><span class="p">([])</span> <span class="o">==</span> <span class="mi">0</span>
-</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>
-</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="k">def</span><span class="w"> </span><span class="nf">test_average_empty_list</span><span class="p">():</span>
-</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>    <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">):</span>
-</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>        <span class="n">average</span><span class="p">([])</span>
-</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>
-</span><span id="__span-14-9"><a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a><span class="c1"># Null/None values</span>
-</span><span id="__span-14-10"><a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a><span class="k">def</span><span class="w"> </span><span class="nf">test_process_none</span><span class="p">():</span>
-</span><span id="__span-14-11"><a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a>    <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">):</span>
-</span><span id="__span-14-12"><a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a>        <span class="n">process_data</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
-</span><span id="__span-14-13"><a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a>
-</span><span id="__span-14-14"><a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a><span class="c1"># Zero values</span>
-</span><span id="__span-14-15"><a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a><span class="k">def</span><span class="w"> </span><span class="nf">test_divide_by_zero</span><span class="p">():</span>
-</span><span id="__span-14-16"><a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a>    <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">ZeroDivisionError</span><span class="p">):</span>
-</span><span id="__span-14-17"><a id="__codelineno-14-17" name="__codelineno-14-17" href="#__codelineno-14-17"></a>        <span class="n">divide</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-</span><span id="__span-14-18"><a id="__codelineno-14-18" name="__codelineno-14-18" href="#__codelineno-14-18"></a>
-</span><span id="__span-14-19"><a id="__codelineno-14-19" name="__codelineno-14-19" href="#__codelineno-14-19"></a><span class="c1"># Negative values</span>
-</span><span id="__span-14-20"><a id="__codelineno-14-20" name="__codelineno-14-20" href="#__codelineno-14-20"></a><span class="k">def</span><span class="w"> </span><span class="nf">test_negative_quantity</span><span class="p">():</span>
-</span><span id="__span-14-21"><a id="__codelineno-14-21" name="__codelineno-14-21" href="#__codelineno-14-21"></a>    <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">):</span>
-</span><span id="__span-14-22"><a id="__codelineno-14-22" name="__codelineno-14-22" href="#__codelineno-14-22"></a>        <span class="n">Order</span><span class="p">(</span><span class="n">quantity</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
-</span><span id="__span-14-23"><a id="__codelineno-14-23" name="__codelineno-14-23" href="#__codelineno-14-23"></a>
-</span><span id="__span-14-24"><a id="__codelineno-14-24" name="__codelineno-14-24" href="#__codelineno-14-24"></a><span class="c1"># Large values</span>
-</span><span id="__span-14-25"><a id="__codelineno-14-25" name="__codelineno-14-25" href="#__codelineno-14-25"></a><span class="k">def</span><span class="w"> </span><span class="nf">test_large_number</span><span class="p">():</span>
-</span><span id="__span-14-26"><a id="__codelineno-14-26" name="__codelineno-14-26" href="#__codelineno-14-26"></a>    <span class="n">result</span> <span class="o">=</span> <span class="n">factorial</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
-</span><span id="__span-14-27"><a id="__codelineno-14-27" name="__codelineno-14-27" href="#__codelineno-14-27"></a>    <span class="k">assert</span> <span class="n">result</span> <span class="o">==</span> <span class="mi">2432902008176640000</span>
-</span><span id="__span-14-28"><a id="__codelineno-14-28" name="__codelineno-14-28" href="#__codelineno-14-28"></a>
-</span><span id="__span-14-29"><a id="__codelineno-14-29" name="__codelineno-14-29" href="#__codelineno-14-29"></a><span class="c1"># Special characters</span>
-</span><span id="__span-14-30"><a id="__codelineno-14-30" name="__codelineno-14-30" href="#__codelineno-14-30"></a><span class="k">def</span><span class="w"> </span><span class="nf">test_special_chars_in_name</span><span class="p">():</span>
-</span><span id="__span-14-31"><a id="__codelineno-14-31" name="__codelineno-14-31" href="#__codelineno-14-31"></a>    <span class="n">user</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="s2">&quot;O&#39;Brien&quot;</span><span class="p">,</span> <span class="s2">&quot;test@example.com&quot;</span><span class="p">)</span>
-</span><span id="__span-14-32"><a id="__codelineno-14-32" name="__codelineno-14-32" href="#__codelineno-14-32"></a>    <span class="k">assert</span> <span class="n">user</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;O&#39;Brien&quot;</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="c1"># Empty collections</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="k">def</span><span class="w"> </span><span class="nf">test_sum_empty_list</span><span class="p">():</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>    <span class="k">assert</span> <span class="n">sum_numbers</span><span class="p">([])</span> <span class="o">==</span> <span class="mi">0</span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="k">def</span><span class="w"> </span><span class="nf">test_average_empty_list</span><span class="p">():</span>
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>    <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">):</span>
+</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>        <span class="n">average</span><span class="p">([])</span>
+</span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>
+</span><span id="__span-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a><span class="c1"># Null/None values</span>
+</span><span id="__span-15-10"><a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a><span class="k">def</span><span class="w"> </span><span class="nf">test_process_none</span><span class="p">():</span>
+</span><span id="__span-15-11"><a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a>    <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">):</span>
+</span><span id="__span-15-12"><a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a>        <span class="n">process_data</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+</span><span id="__span-15-13"><a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a>
+</span><span id="__span-15-14"><a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a><span class="c1"># Zero values</span>
+</span><span id="__span-15-15"><a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a><span class="k">def</span><span class="w"> </span><span class="nf">test_divide_by_zero</span><span class="p">():</span>
+</span><span id="__span-15-16"><a id="__codelineno-15-16" name="__codelineno-15-16" href="#__codelineno-15-16"></a>    <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">ZeroDivisionError</span><span class="p">):</span>
+</span><span id="__span-15-17"><a id="__codelineno-15-17" name="__codelineno-15-17" href="#__codelineno-15-17"></a>        <span class="n">divide</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</span><span id="__span-15-18"><a id="__codelineno-15-18" name="__codelineno-15-18" href="#__codelineno-15-18"></a>
+</span><span id="__span-15-19"><a id="__codelineno-15-19" name="__codelineno-15-19" href="#__codelineno-15-19"></a><span class="c1"># Negative values</span>
+</span><span id="__span-15-20"><a id="__codelineno-15-20" name="__codelineno-15-20" href="#__codelineno-15-20"></a><span class="k">def</span><span class="w"> </span><span class="nf">test_negative_quantity</span><span class="p">():</span>
+</span><span id="__span-15-21"><a id="__codelineno-15-21" name="__codelineno-15-21" href="#__codelineno-15-21"></a>    <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">):</span>
+</span><span id="__span-15-22"><a id="__codelineno-15-22" name="__codelineno-15-22" href="#__codelineno-15-22"></a>        <span class="n">Order</span><span class="p">(</span><span class="n">quantity</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-15-23"><a id="__codelineno-15-23" name="__codelineno-15-23" href="#__codelineno-15-23"></a>
+</span><span id="__span-15-24"><a id="__codelineno-15-24" name="__codelineno-15-24" href="#__codelineno-15-24"></a><span class="c1"># Large values</span>
+</span><span id="__span-15-25"><a id="__codelineno-15-25" name="__codelineno-15-25" href="#__codelineno-15-25"></a><span class="k">def</span><span class="w"> </span><span class="nf">test_large_number</span><span class="p">():</span>
+</span><span id="__span-15-26"><a id="__codelineno-15-26" name="__codelineno-15-26" href="#__codelineno-15-26"></a>    <span class="n">result</span> <span class="o">=</span> <span class="n">factorial</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+</span><span id="__span-15-27"><a id="__codelineno-15-27" name="__codelineno-15-27" href="#__codelineno-15-27"></a>    <span class="k">assert</span> <span class="n">result</span> <span class="o">==</span> <span class="mi">2432902008176640000</span>
+</span><span id="__span-15-28"><a id="__codelineno-15-28" name="__codelineno-15-28" href="#__codelineno-15-28"></a>
+</span><span id="__span-15-29"><a id="__codelineno-15-29" name="__codelineno-15-29" href="#__codelineno-15-29"></a><span class="c1"># Special characters</span>
+</span><span id="__span-15-30"><a id="__codelineno-15-30" name="__codelineno-15-30" href="#__codelineno-15-30"></a><span class="k">def</span><span class="w"> </span><span class="nf">test_special_chars_in_name</span><span class="p">():</span>
+</span><span id="__span-15-31"><a id="__codelineno-15-31" name="__codelineno-15-31" href="#__codelineno-15-31"></a>    <span class="n">user</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="s2">&quot;O&#39;Brien&quot;</span><span class="p">,</span> <span class="s2">&quot;test@example.com&quot;</span><span class="p">)</span>
+</span><span id="__span-15-32"><a id="__codelineno-15-32" name="__codelineno-15-32" href="#__codelineno-15-32"></a>    <span class="k">assert</span> <span class="n">user</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;O&#39;Brien&quot;</span>
 </span></code></pre></div>
 <h3 id="equivalence-partitioning">Equivalence Partitioning</h3>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="c1"># Divide input space into partitions</span>
-</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="c1"># Test one value from each partition</span>
-</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>
-</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="c1"># Age validation: child (0-17), adult (18-64), senior (65+)</span>
-</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="k">def</span><span class="w"> </span><span class="nf">test_child</span><span class="p">():</span>
-</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>    <span class="k">assert</span> <span class="n">get_category</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;child&quot;</span>
-</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>
-</span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="k">def</span><span class="w"> </span><span class="nf">test_adult</span><span class="p">():</span>
-</span><span id="__span-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a>    <span class="k">assert</span> <span class="n">get_category</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;adult&quot;</span>
-</span><span id="__span-15-10"><a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a>
-</span><span id="__span-15-11"><a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a><span class="k">def</span><span class="w"> </span><span class="nf">test_senior</span><span class="p">():</span>
-</span><span id="__span-15-12"><a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a>    <span class="k">assert</span> <span class="n">get_category</span><span class="p">(</span><span class="mi">70</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;senior&quot;</span>
-</span><span id="__span-15-13"><a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a>
-</span><span id="__span-15-14"><a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a><span class="c1"># Plus boundaries</span>
-</span><span id="__span-15-15"><a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a><span class="k">def</span><span class="w"> </span><span class="nf">test_boundaries</span><span class="p">():</span>
-</span><span id="__span-15-16"><a id="__codelineno-15-16" name="__codelineno-15-16" href="#__codelineno-15-16"></a>    <span class="k">assert</span> <span class="n">get_category</span><span class="p">(</span><span class="mi">17</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;child&quot;</span>
-</span><span id="__span-15-17"><a id="__codelineno-15-17" name="__codelineno-15-17" href="#__codelineno-15-17"></a>    <span class="k">assert</span> <span class="n">get_category</span><span class="p">(</span><span class="mi">18</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;adult&quot;</span>
-</span><span id="__span-15-18"><a id="__codelineno-15-18" name="__codelineno-15-18" href="#__codelineno-15-18"></a>    <span class="k">assert</span> <span class="n">get_category</span><span class="p">(</span><span class="mi">64</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;adult&quot;</span>
-</span><span id="__span-15-19"><a id="__codelineno-15-19" name="__codelineno-15-19" href="#__codelineno-15-19"></a>    <span class="k">assert</span> <span class="n">get_category</span><span class="p">(</span><span class="mi">65</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;senior&quot;</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="c1"># Divide input space into partitions</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="c1"># Test one value from each partition</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="c1"># Age validation: child (0-17), adult (18-64), senior (65+)</span>
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="k">def</span><span class="w"> </span><span class="nf">test_child</span><span class="p">():</span>
+</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>    <span class="k">assert</span> <span class="n">get_category</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;child&quot;</span>
+</span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>
+</span><span id="__span-16-8"><a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="k">def</span><span class="w"> </span><span class="nf">test_adult</span><span class="p">():</span>
+</span><span id="__span-16-9"><a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a>    <span class="k">assert</span> <span class="n">get_category</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;adult&quot;</span>
+</span><span id="__span-16-10"><a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a>
+</span><span id="__span-16-11"><a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a><span class="k">def</span><span class="w"> </span><span class="nf">test_senior</span><span class="p">():</span>
+</span><span id="__span-16-12"><a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a>    <span class="k">assert</span> <span class="n">get_category</span><span class="p">(</span><span class="mi">70</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;senior&quot;</span>
+</span><span id="__span-16-13"><a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a>
+</span><span id="__span-16-14"><a id="__codelineno-16-14" name="__codelineno-16-14" href="#__codelineno-16-14"></a><span class="c1"># Plus boundaries</span>
+</span><span id="__span-16-15"><a id="__codelineno-16-15" name="__codelineno-16-15" href="#__codelineno-16-15"></a><span class="k">def</span><span class="w"> </span><span class="nf">test_boundaries</span><span class="p">():</span>
+</span><span id="__span-16-16"><a id="__codelineno-16-16" name="__codelineno-16-16" href="#__codelineno-16-16"></a>    <span class="k">assert</span> <span class="n">get_category</span><span class="p">(</span><span class="mi">17</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;child&quot;</span>
+</span><span id="__span-16-17"><a id="__codelineno-16-17" name="__codelineno-16-17" href="#__codelineno-16-17"></a>    <span class="k">assert</span> <span class="n">get_category</span><span class="p">(</span><span class="mi">18</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;adult&quot;</span>
+</span><span id="__span-16-18"><a id="__codelineno-16-18" name="__codelineno-16-18" href="#__codelineno-16-18"></a>    <span class="k">assert</span> <span class="n">get_category</span><span class="p">(</span><span class="mi">64</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;adult&quot;</span>
+</span><span id="__span-16-19"><a id="__codelineno-16-19" name="__codelineno-16-19" href="#__codelineno-16-19"></a>    <span class="k">assert</span> <span class="n">get_category</span><span class="p">(</span><span class="mi">65</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;senior&quot;</span>
 </span></code></pre></div>
 <h3 id="error-cases">Error Cases</h3>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="c1"># Test error conditions</span>
-</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="k">def</span><span class="w"> </span><span class="nf">test_invalid_email</span><span class="p">():</span>
-</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>    <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">):</span>
-</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>        <span class="n">User</span><span class="p">(</span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="s2">&quot;invalid-email&quot;</span><span class="p">)</span>
-</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>
-</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="k">def</span><span class="w"> </span><span class="nf">test_negative_price</span><span class="p">():</span>
-</span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>    <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">):</span>
-</span><span id="__span-16-8"><a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a>        <span class="n">Product</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Item&quot;</span><span class="p">,</span> <span class="n">price</span><span class="o">=-</span><span class="mi">10</span><span class="p">)</span>
-</span><span id="__span-16-9"><a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a>
-</span><span id="__span-16-10"><a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a><span class="k">def</span><span class="w"> </span><span class="nf">test_missing_required_field</span><span class="p">():</span>
-</span><span id="__span-16-11"><a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a>    <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">):</span>
-</span><span id="__span-16-12"><a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a>        <span class="n">User</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">email</span><span class="o">=</span><span class="s2">&quot;test@example.com&quot;</span><span class="p">)</span>
-</span><span id="__span-16-13"><a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a>
-</span><span id="__span-16-14"><a id="__codelineno-16-14" name="__codelineno-16-14" href="#__codelineno-16-14"></a><span class="k">def</span><span class="w"> </span><span class="nf">test_duplicate_username</span><span class="p">():</span>
-</span><span id="__span-16-15"><a id="__codelineno-16-15" name="__codelineno-16-15" href="#__codelineno-16-15"></a>    <span class="n">create_user</span><span class="p">(</span><span class="s2">&quot;alice&quot;</span><span class="p">,</span> <span class="s2">&quot;alice1@example.com&quot;</span><span class="p">)</span>
-</span><span id="__span-16-16"><a id="__codelineno-16-16" name="__codelineno-16-16" href="#__codelineno-16-16"></a>    <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="n">DuplicateError</span><span class="p">):</span>
-</span><span id="__span-16-17"><a id="__codelineno-16-17" name="__codelineno-16-17" href="#__codelineno-16-17"></a>        <span class="n">create_user</span><span class="p">(</span><span class="s2">&quot;alice&quot;</span><span class="p">,</span> <span class="s2">&quot;alice2@example.com&quot;</span><span class="p">)</span>
-</span></code></pre></div>
-<h3 id="state-transitions">State Transitions</h3>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="c1"># Test state changes</span>
-</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="k">def</span><span class="w"> </span><span class="nf">test_order_state_transitions</span><span class="p">():</span>
-</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>    <span class="n">order</span> <span class="o">=</span> <span class="n">Order</span><span class="p">()</span>
-</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>
-</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>    <span class="c1"># New -&gt; Pending</span>
-</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>    <span class="k">assert</span> <span class="n">order</span><span class="o">.</span><span class="n">state</span> <span class="o">==</span> <span class="s2">&quot;new&quot;</span>
-</span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a>    <span class="n">order</span><span class="o">.</span><span class="n">submit</span><span class="p">()</span>
-</span><span id="__span-17-8"><a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a>    <span class="k">assert</span> <span class="n">order</span><span class="o">.</span><span class="n">state</span> <span class="o">==</span> <span class="s2">&quot;pending&quot;</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="c1"># Test error conditions</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="k">def</span><span class="w"> </span><span class="nf">test_invalid_email</span><span class="p">():</span>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>    <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">):</span>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>        <span class="n">User</span><span class="p">(</span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="s2">&quot;invalid-email&quot;</span><span class="p">)</span>
+</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>
+</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="k">def</span><span class="w"> </span><span class="nf">test_negative_price</span><span class="p">():</span>
+</span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a>    <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">):</span>
+</span><span id="__span-17-8"><a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a>        <span class="n">Product</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Item&quot;</span><span class="p">,</span> <span class="n">price</span><span class="o">=-</span><span class="mi">10</span><span class="p">)</span>
 </span><span id="__span-17-9"><a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a>
-</span><span id="__span-17-10"><a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a>    <span class="c1"># Pending -&gt; Processing</span>
-</span><span id="__span-17-11"><a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a>    <span class="n">order</span><span class="o">.</span><span class="n">process</span><span class="p">()</span>
-</span><span id="__span-17-12"><a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a>    <span class="k">assert</span> <span class="n">order</span><span class="o">.</span><span class="n">state</span> <span class="o">==</span> <span class="s2">&quot;processing&quot;</span>
+</span><span id="__span-17-10"><a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a><span class="k">def</span><span class="w"> </span><span class="nf">test_missing_required_field</span><span class="p">():</span>
+</span><span id="__span-17-11"><a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a>    <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">):</span>
+</span><span id="__span-17-12"><a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a>        <span class="n">User</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">email</span><span class="o">=</span><span class="s2">&quot;test@example.com&quot;</span><span class="p">)</span>
 </span><span id="__span-17-13"><a id="__codelineno-17-13" name="__codelineno-17-13" href="#__codelineno-17-13"></a>
-</span><span id="__span-17-14"><a id="__codelineno-17-14" name="__codelineno-17-14" href="#__codelineno-17-14"></a>    <span class="c1"># Processing -&gt; Shipped</span>
-</span><span id="__span-17-15"><a id="__codelineno-17-15" name="__codelineno-17-15" href="#__codelineno-17-15"></a>    <span class="n">order</span><span class="o">.</span><span class="n">ship</span><span class="p">()</span>
-</span><span id="__span-17-16"><a id="__codelineno-17-16" name="__codelineno-17-16" href="#__codelineno-17-16"></a>    <span class="k">assert</span> <span class="n">order</span><span class="o">.</span><span class="n">state</span> <span class="o">==</span> <span class="s2">&quot;shipped&quot;</span>
-</span><span id="__span-17-17"><a id="__codelineno-17-17" name="__codelineno-17-17" href="#__codelineno-17-17"></a>
-</span><span id="__span-17-18"><a id="__codelineno-17-18" name="__codelineno-17-18" href="#__codelineno-17-18"></a>    <span class="c1"># Processing -&gt; Cancelled</span>
-</span><span id="__span-17-19"><a id="__codelineno-17-19" name="__codelineno-17-19" href="#__codelineno-17-19"></a>    <span class="n">order2</span> <span class="o">=</span> <span class="n">Order</span><span class="p">()</span>
-</span><span id="__span-17-20"><a id="__codelineno-17-20" name="__codelineno-17-20" href="#__codelineno-17-20"></a>    <span class="n">order2</span><span class="o">.</span><span class="n">submit</span><span class="p">()</span>
-</span><span id="__span-17-21"><a id="__codelineno-17-21" name="__codelineno-17-21" href="#__codelineno-17-21"></a>    <span class="n">order2</span><span class="o">.</span><span class="n">process</span><span class="p">()</span>
-</span><span id="__span-17-22"><a id="__codelineno-17-22" name="__codelineno-17-22" href="#__codelineno-17-22"></a>    <span class="n">order2</span><span class="o">.</span><span class="n">cancel</span><span class="p">()</span>
-</span><span id="__span-17-23"><a id="__codelineno-17-23" name="__codelineno-17-23" href="#__codelineno-17-23"></a>    <span class="k">assert</span> <span class="n">order2</span><span class="o">.</span><span class="n">state</span> <span class="o">==</span> <span class="s2">&quot;cancelled&quot;</span>
-</span><span id="__span-17-24"><a id="__codelineno-17-24" name="__codelineno-17-24" href="#__codelineno-17-24"></a>
-</span><span id="__span-17-25"><a id="__codelineno-17-25" name="__codelineno-17-25" href="#__codelineno-17-25"></a><span class="c1"># Test invalid transitions</span>
-</span><span id="__span-17-26"><a id="__codelineno-17-26" name="__codelineno-17-26" href="#__codelineno-17-26"></a><span class="k">def</span><span class="w"> </span><span class="nf">test_cannot_cancel_shipped_order</span><span class="p">():</span>
-</span><span id="__span-17-27"><a id="__codelineno-17-27" name="__codelineno-17-27" href="#__codelineno-17-27"></a>    <span class="n">order</span> <span class="o">=</span> <span class="n">Order</span><span class="p">()</span>
-</span><span id="__span-17-28"><a id="__codelineno-17-28" name="__codelineno-17-28" href="#__codelineno-17-28"></a>    <span class="n">order</span><span class="o">.</span><span class="n">submit</span><span class="p">()</span>
-</span><span id="__span-17-29"><a id="__codelineno-17-29" name="__codelineno-17-29" href="#__codelineno-17-29"></a>    <span class="n">order</span><span class="o">.</span><span class="n">process</span><span class="p">()</span>
-</span><span id="__span-17-30"><a id="__codelineno-17-30" name="__codelineno-17-30" href="#__codelineno-17-30"></a>    <span class="n">order</span><span class="o">.</span><span class="n">ship</span><span class="p">()</span>
-</span><span id="__span-17-31"><a id="__codelineno-17-31" name="__codelineno-17-31" href="#__codelineno-17-31"></a>
-</span><span id="__span-17-32"><a id="__codelineno-17-32" name="__codelineno-17-32" href="#__codelineno-17-32"></a>    <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="n">InvalidStateError</span><span class="p">):</span>
-</span><span id="__span-17-33"><a id="__codelineno-17-33" name="__codelineno-17-33" href="#__codelineno-17-33"></a>        <span class="n">order</span><span class="o">.</span><span class="n">cancel</span><span class="p">()</span>
+</span><span id="__span-17-14"><a id="__codelineno-17-14" name="__codelineno-17-14" href="#__codelineno-17-14"></a><span class="k">def</span><span class="w"> </span><span class="nf">test_duplicate_username</span><span class="p">():</span>
+</span><span id="__span-17-15"><a id="__codelineno-17-15" name="__codelineno-17-15" href="#__codelineno-17-15"></a>    <span class="n">create_user</span><span class="p">(</span><span class="s2">&quot;alice&quot;</span><span class="p">,</span> <span class="s2">&quot;alice1@example.com&quot;</span><span class="p">)</span>
+</span><span id="__span-17-16"><a id="__codelineno-17-16" name="__codelineno-17-16" href="#__codelineno-17-16"></a>    <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="n">DuplicateError</span><span class="p">):</span>
+</span><span id="__span-17-17"><a id="__codelineno-17-17" name="__codelineno-17-17" href="#__codelineno-17-17"></a>        <span class="n">create_user</span><span class="p">(</span><span class="s2">&quot;alice&quot;</span><span class="p">,</span> <span class="s2">&quot;alice2@example.com&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<h3 id="practice-exercises-finding-edge-cases">Practice Exercises: Finding Edge Cases</h3>
+<p>Practice applying the edge case analysis process. For each function, identify the edge cases and boundaries to test.</p>
+<h4 id="exercise-1-string-truncation">Exercise 1: String Truncation</h4>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">truncate</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">max_length</span><span class="p">,</span> <span class="n">suffix</span><span class="o">=</span><span class="s2">&quot;...&quot;</span><span class="p">):</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Truncate text to max_length, adding suffix if truncated.</span>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="sd">    Args:</span>
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="sd">        text: String to truncate</span>
+</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="sd">        max_length: Maximum length (including suffix)</span>
+</span><span id="__span-18-7"><a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="sd">        suffix: String to add if truncated</span>
+</span><span id="__span-18-8"><a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a>
+</span><span id="__span-18-9"><a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a><span class="sd">    Returns:</span>
+</span><span id="__span-18-10"><a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a><span class="sd">        Truncated string</span>
+</span><span id="__span-18-11"><a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="__span-18-12"><a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a>    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">text</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">max_length</span><span class="p">:</span>
+</span><span id="__span-18-13"><a id="__codelineno-18-13" name="__codelineno-18-13" href="#__codelineno-18-13"></a>        <span class="k">return</span> <span class="n">text</span>
+</span><span id="__span-18-14"><a id="__codelineno-18-14" name="__codelineno-18-14" href="#__codelineno-18-14"></a>    <span class="k">return</span> <span class="n">text</span><span class="p">[:</span><span class="n">max_length</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">suffix</span><span class="p">)]</span> <span class="o">+</span> <span class="n">suffix</span>
+</span></code></pre></div>
+<p><strong>Your turn:</strong></p>
+<ol>
+<li>What edge cases should you test?</li>
+<li>What boundaries exist?</li>
+<li>List at least 6 test cases</li>
+</ol>
+<details>
+<summary>Click to see answer</summary>
+
+**Edge cases to test:**
+
+- Empty string: `truncate("", 10)` → `""`
+- Text shorter than max_length: `truncate("hi", 10)` → `"hi"`
+- Text exactly max_length: `truncate("hello", 5)` → `"hello"`
+- Text longer than max_length: `truncate("hello world", 8)` → `"hello..."`
+- Very short max_length: `truncate("hello", 3)` → (edge case: can it fit suffix?)
+- Empty suffix: `truncate("hello", 3, suffix="")` → `"hel"`
+- Long suffix: `truncate("hello", 5, suffix="[more]")` → (suffix longer than max!)
+- Single character text: `truncate("a", 10)` → `"a"`
+
+**Boundaries:**
+
+- At max_length: text exactly max_length chars
+- Just over max_length: text is max_length + 1 chars
+- Suffix length vs max_length: when suffix_len >= max_length
+
+**Test cases (minimum 6):**
+
+1. Empty string
+2. Text shorter than max (no truncation)
+3. Text exactly at max (no truncation)
+4. Text longer than max (truncation)
+5. Max_length equals suffix length (edge case)
+6. Max_length less than suffix length (error or special handling?)
+7. Custom suffix
+8. Very long text
+</details>
+
+<h4 id="exercise-2-calculate-grade-average">Exercise 2: Calculate Grade Average</h4>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">calculate_grade_average</span><span class="p">(</span><span class="n">grades</span><span class="p">,</span> <span class="n">drop_lowest</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Calculate average of grades.</span>
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="sd">    Args:</span>
+</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="sd">        grades: List of numeric grades (0-100)</span>
+</span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="sd">        drop_lowest: If True, drop lowest grade before averaging</span>
+</span><span id="__span-19-7"><a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a>
+</span><span id="__span-19-8"><a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a><span class="sd">    Returns:</span>
+</span><span id="__span-19-9"><a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a><span class="sd">        Average grade as float</span>
+</span><span id="__span-19-10"><a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a>
+</span><span id="__span-19-11"><a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a><span class="sd">    Raises:</span>
+</span><span id="__span-19-12"><a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a><span class="sd">        ValueError: If grades is empty or contains invalid values</span>
+</span><span id="__span-19-13"><a id="__codelineno-19-13" name="__codelineno-19-13" href="#__codelineno-19-13"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="__span-19-14"><a id="__codelineno-19-14" name="__codelineno-19-14" href="#__codelineno-19-14"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="n">grades</span><span class="p">:</span>
+</span><span id="__span-19-15"><a id="__codelineno-19-15" name="__codelineno-19-15" href="#__codelineno-19-15"></a>        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Grades list cannot be empty&quot;</span><span class="p">)</span>
+</span><span id="__span-19-16"><a id="__codelineno-19-16" name="__codelineno-19-16" href="#__codelineno-19-16"></a>
+</span><span id="__span-19-17"><a id="__codelineno-19-17" name="__codelineno-19-17" href="#__codelineno-19-17"></a>    <span class="k">for</span> <span class="n">grade</span> <span class="ow">in</span> <span class="n">grades</span><span class="p">:</span>
+</span><span id="__span-19-18"><a id="__codelineno-19-18" name="__codelineno-19-18" href="#__codelineno-19-18"></a>        <span class="k">if</span> <span class="n">grade</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">grade</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="p">:</span>
+</span><span id="__span-19-19"><a id="__codelineno-19-19" name="__codelineno-19-19" href="#__codelineno-19-19"></a>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Grade must be between 0 and 100&quot;</span><span class="p">)</span>
+</span><span id="__span-19-20"><a id="__codelineno-19-20" name="__codelineno-19-20" href="#__codelineno-19-20"></a>
+</span><span id="__span-19-21"><a id="__codelineno-19-21" name="__codelineno-19-21" href="#__codelineno-19-21"></a>    <span class="k">if</span> <span class="n">drop_lowest</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">grades</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+</span><span id="__span-19-22"><a id="__codelineno-19-22" name="__codelineno-19-22" href="#__codelineno-19-22"></a>        <span class="n">grades_to_average</span> <span class="o">=</span> <span class="p">[</span><span class="n">g</span> <span class="k">for</span> <span class="n">g</span> <span class="ow">in</span> <span class="n">grades</span> <span class="k">if</span> <span class="n">g</span> <span class="o">!=</span> <span class="nb">min</span><span class="p">(</span><span class="n">grades</span><span class="p">)]</span>
+</span><span id="__span-19-23"><a id="__codelineno-19-23" name="__codelineno-19-23" href="#__codelineno-19-23"></a>    <span class="k">else</span><span class="p">:</span>
+</span><span id="__span-19-24"><a id="__codelineno-19-24" name="__codelineno-19-24" href="#__codelineno-19-24"></a>        <span class="n">grades_to_average</span> <span class="o">=</span> <span class="n">grades</span>
+</span><span id="__span-19-25"><a id="__codelineno-19-25" name="__codelineno-19-25" href="#__codelineno-19-25"></a>
+</span><span id="__span-19-26"><a id="__codelineno-19-26" name="__codelineno-19-26" href="#__codelineno-19-26"></a>    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">grades_to_average</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">grades_to_average</span><span class="p">)</span>
+</span></code></pre></div>
+<p><strong>Your turn:</strong></p>
+<ol>
+<li>What edge cases exist for the <code>grades</code> parameter?</li>
+<li>What boundary values should you test?</li>
+<li>What special cases exist for <code>drop_lowest</code>?</li>
+<li>List at least 8 test cases</li>
+</ol>
+<details>
+<summary>Click to see answer</summary>
+
+**Edge cases:**
+
+- Empty list: Should raise ValueError
+- Single grade: drop_lowest should have no effect
+- Two grades: drop_lowest removes one
+- All grades identical: drop_lowest removes one copy
+- Grade at 0 boundary: `[0, 50, 100]`
+- Grade at 100 boundary: `[100, 80, 90]`
+- Multiple lowest grades: `[50, 50, 60]` - which to drop?
+- Very large list: performance check
+
+**Boundaries:**
+
+- grade = 0 (minimum valid)
+- grade = 100 (maximum valid)
+- grade = -1 (invalid)
+- grade = 101 (invalid)
+- len(grades) = 1 (can't drop from single item)
+- len(grades) = 2 (drop one, average the other)
+
+**drop_lowest special cases:**
+
+- False: normal average
+- True with single grade: don't drop
+- True with multiple: drop lowest
+- True with duplicate lowest: drop one
+
+**Test cases (minimum 8):**
+
+1. Normal case: `[80, 90, 85]`, `drop_lowest=False` → `85.0`
+2. Drop lowest: `[80, 90, 85]`, `drop_lowest=True` → `87.5` (drops 80)
+3. Empty list: raises ValueError
+4. Single grade: `[90]`, `drop_lowest=True` → `90.0` (can't drop)
+5. Two grades: `[80, 90]`, `drop_lowest=True` → `90.0`
+6. All same: `[85, 85, 85]`, `drop_lowest=True` → `85.0`
+7. Grade at 0: `[0, 50, 100]` → `50.0`
+8. Grade at 100: `[100, 100, 100]` → `100.0`
+9. Invalid negative: `[-5, 80, 90]` → ValueError
+10. Invalid over 100: `[80, 90, 105]` → ValueError
+</details>
+
+<h4 id="exercise-3-find-common-elements">Exercise 3: Find Common Elements</h4>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">find_common_elements</span><span class="p">(</span><span class="n">list1</span><span class="p">,</span> <span class="n">list2</span><span class="p">):</span>
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Find elements that appear in both lists.</span>
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>
+</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="sd">    Args:</span>
+</span><span id="__span-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a><span class="sd">        list1: First list</span>
+</span><span id="__span-20-6"><a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a><span class="sd">        list2: Second list</span>
+</span><span id="__span-20-7"><a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a>
+</span><span id="__span-20-8"><a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a><span class="sd">    Returns:</span>
+</span><span id="__span-20-9"><a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a><span class="sd">        List of common elements (no duplicates, order from list1)</span>
+</span><span id="__span-20-10"><a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a>
+</span><span id="__span-20-11"><a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a><span class="sd">    Example:</span>
+</span><span id="__span-20-12"><a id="__codelineno-20-12" name="__codelineno-20-12" href="#__codelineno-20-12"></a><span class="sd">        find_common_elements([1, 2, 3, 2], [2, 3, 4]) → [2, 3]</span>
+</span><span id="__span-20-13"><a id="__codelineno-20-13" name="__codelineno-20-13" href="#__codelineno-20-13"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="__span-20-14"><a id="__codelineno-20-14" name="__codelineno-20-14" href="#__codelineno-20-14"></a>    <span class="n">common</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span id="__span-20-15"><a id="__codelineno-20-15" name="__codelineno-20-15" href="#__codelineno-20-15"></a>    <span class="n">seen</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+</span><span id="__span-20-16"><a id="__codelineno-20-16" name="__codelineno-20-16" href="#__codelineno-20-16"></a>
+</span><span id="__span-20-17"><a id="__codelineno-20-17" name="__codelineno-20-17" href="#__codelineno-20-17"></a>    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">list1</span><span class="p">:</span>
+</span><span id="__span-20-18"><a id="__codelineno-20-18" name="__codelineno-20-18" href="#__codelineno-20-18"></a>        <span class="k">if</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">list2</span> <span class="ow">and</span> <span class="n">item</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">seen</span><span class="p">:</span>
+</span><span id="__span-20-19"><a id="__codelineno-20-19" name="__codelineno-20-19" href="#__codelineno-20-19"></a>            <span class="n">common</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+</span><span id="__span-20-20"><a id="__codelineno-20-20" name="__codelineno-20-20" href="#__codelineno-20-20"></a>            <span class="n">seen</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+</span><span id="__span-20-21"><a id="__codelineno-20-21" name="__codelineno-20-21" href="#__codelineno-20-21"></a>
+</span><span id="__span-20-22"><a id="__codelineno-20-22" name="__codelineno-20-22" href="#__codelineno-20-22"></a>    <span class="k">return</span> <span class="n">common</span>
+</span></code></pre></div>
+<p><strong>Your turn:</strong></p>
+<ol>
+<li>What collection edge cases should you test?</li>
+<li>What scenarios exist for common elements?</li>
+<li>How should duplicates be handled?</li>
+<li>List at least 7 test cases</li>
+</ol>
+<details>
+<summary>Click to see answer</summary>
+
+**Edge cases:**
+
+- Both lists empty: `[], []` → `[]`
+- One list empty: `[1, 2], []` → `[]`
+- No common elements: `[1, 2], [3, 4]` → `[]`
+- All elements common: `[1, 2], [1, 2]` → `[1, 2]`
+- Single element lists: `[1], [1]` → `[1]`
+- Duplicates in list1: `[1, 1, 2], [1, 2]` → `[1, 2]` (no duplicates in result)
+- Duplicates in list2: `[1, 2], [1, 1, 2]` → `[1, 2]`
+- Different types: `[1, "a", 2], ["a", 3]` → `["a"]`
+
+**Common element scenarios:**
+
+- Some common, some not: `[1, 2, 3], [2, 3, 4]` → `[2, 3]`
+- First element common: `[1, 2, 3], [1, 4]` → `[1]`
+- Last element common: `[1, 2, 3], [4, 3]` → `[3]`
+- Middle elements common: `[1, 2, 3, 4], [5, 2, 3, 6]` → `[2, 3]`
+
+**Order preservation:**
+
+- Result order matches list1: `[3, 1, 2], [1, 2, 3]` → `[3, 1, 2]`
+
+**Test cases (minimum 7):**
+
+1. Both empty: `[], []` → `[]`
+2. One empty: `[1, 2], []` → `[]`
+3. No common: `[1, 2], [3, 4]` → `[]`
+4. Some common: `[1, 2, 3], [2, 3, 4]` → `[2, 3]`
+5. All common: `[1, 2], [2, 1]` → `[1, 2]`
+6. Duplicates in list1: `[1, 1, 2], [1, 2]` → `[1, 2]`
+7. Order preserved: `[3, 1, 2], [1, 2, 3]` → `[3, 1, 2]`
+8. Single elements: `[1], [1]` → `[1]`
+</details>
+
+<h3 id="state-transitions">State Transitions</h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="c1"># Test state changes</span>
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="k">def</span><span class="w"> </span><span class="nf">test_order_state_transitions</span><span class="p">():</span>
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>    <span class="n">order</span> <span class="o">=</span> <span class="n">Order</span><span class="p">()</span>
+</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>
+</span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>    <span class="c1"># New -&gt; Pending</span>
+</span><span id="__span-21-6"><a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a>    <span class="k">assert</span> <span class="n">order</span><span class="o">.</span><span class="n">state</span> <span class="o">==</span> <span class="s2">&quot;new&quot;</span>
+</span><span id="__span-21-7"><a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a>    <span class="n">order</span><span class="o">.</span><span class="n">submit</span><span class="p">()</span>
+</span><span id="__span-21-8"><a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a>    <span class="k">assert</span> <span class="n">order</span><span class="o">.</span><span class="n">state</span> <span class="o">==</span> <span class="s2">&quot;pending&quot;</span>
+</span><span id="__span-21-9"><a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a>
+</span><span id="__span-21-10"><a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a>    <span class="c1"># Pending -&gt; Processing</span>
+</span><span id="__span-21-11"><a id="__codelineno-21-11" name="__codelineno-21-11" href="#__codelineno-21-11"></a>    <span class="n">order</span><span class="o">.</span><span class="n">process</span><span class="p">()</span>
+</span><span id="__span-21-12"><a id="__codelineno-21-12" name="__codelineno-21-12" href="#__codelineno-21-12"></a>    <span class="k">assert</span> <span class="n">order</span><span class="o">.</span><span class="n">state</span> <span class="o">==</span> <span class="s2">&quot;processing&quot;</span>
+</span><span id="__span-21-13"><a id="__codelineno-21-13" name="__codelineno-21-13" href="#__codelineno-21-13"></a>
+</span><span id="__span-21-14"><a id="__codelineno-21-14" name="__codelineno-21-14" href="#__codelineno-21-14"></a>    <span class="c1"># Processing -&gt; Shipped</span>
+</span><span id="__span-21-15"><a id="__codelineno-21-15" name="__codelineno-21-15" href="#__codelineno-21-15"></a>    <span class="n">order</span><span class="o">.</span><span class="n">ship</span><span class="p">()</span>
+</span><span id="__span-21-16"><a id="__codelineno-21-16" name="__codelineno-21-16" href="#__codelineno-21-16"></a>    <span class="k">assert</span> <span class="n">order</span><span class="o">.</span><span class="n">state</span> <span class="o">==</span> <span class="s2">&quot;shipped&quot;</span>
+</span><span id="__span-21-17"><a id="__codelineno-21-17" name="__codelineno-21-17" href="#__codelineno-21-17"></a>
+</span><span id="__span-21-18"><a id="__codelineno-21-18" name="__codelineno-21-18" href="#__codelineno-21-18"></a>    <span class="c1"># Processing -&gt; Cancelled</span>
+</span><span id="__span-21-19"><a id="__codelineno-21-19" name="__codelineno-21-19" href="#__codelineno-21-19"></a>    <span class="n">order2</span> <span class="o">=</span> <span class="n">Order</span><span class="p">()</span>
+</span><span id="__span-21-20"><a id="__codelineno-21-20" name="__codelineno-21-20" href="#__codelineno-21-20"></a>    <span class="n">order2</span><span class="o">.</span><span class="n">submit</span><span class="p">()</span>
+</span><span id="__span-21-21"><a id="__codelineno-21-21" name="__codelineno-21-21" href="#__codelineno-21-21"></a>    <span class="n">order2</span><span class="o">.</span><span class="n">process</span><span class="p">()</span>
+</span><span id="__span-21-22"><a id="__codelineno-21-22" name="__codelineno-21-22" href="#__codelineno-21-22"></a>    <span class="n">order2</span><span class="o">.</span><span class="n">cancel</span><span class="p">()</span>
+</span><span id="__span-21-23"><a id="__codelineno-21-23" name="__codelineno-21-23" href="#__codelineno-21-23"></a>    <span class="k">assert</span> <span class="n">order2</span><span class="o">.</span><span class="n">state</span> <span class="o">==</span> <span class="s2">&quot;cancelled&quot;</span>
+</span><span id="__span-21-24"><a id="__codelineno-21-24" name="__codelineno-21-24" href="#__codelineno-21-24"></a>
+</span><span id="__span-21-25"><a id="__codelineno-21-25" name="__codelineno-21-25" href="#__codelineno-21-25"></a><span class="c1"># Test invalid transitions</span>
+</span><span id="__span-21-26"><a id="__codelineno-21-26" name="__codelineno-21-26" href="#__codelineno-21-26"></a><span class="k">def</span><span class="w"> </span><span class="nf">test_cannot_cancel_shipped_order</span><span class="p">():</span>
+</span><span id="__span-21-27"><a id="__codelineno-21-27" name="__codelineno-21-27" href="#__codelineno-21-27"></a>    <span class="n">order</span> <span class="o">=</span> <span class="n">Order</span><span class="p">()</span>
+</span><span id="__span-21-28"><a id="__codelineno-21-28" name="__codelineno-21-28" href="#__codelineno-21-28"></a>    <span class="n">order</span><span class="o">.</span><span class="n">submit</span><span class="p">()</span>
+</span><span id="__span-21-29"><a id="__codelineno-21-29" name="__codelineno-21-29" href="#__codelineno-21-29"></a>    <span class="n">order</span><span class="o">.</span><span class="n">process</span><span class="p">()</span>
+</span><span id="__span-21-30"><a id="__codelineno-21-30" name="__codelineno-21-30" href="#__codelineno-21-30"></a>    <span class="n">order</span><span class="o">.</span><span class="n">ship</span><span class="p">()</span>
+</span><span id="__span-21-31"><a id="__codelineno-21-31" name="__codelineno-21-31" href="#__codelineno-21-31"></a>
+</span><span id="__span-21-32"><a id="__codelineno-21-32" name="__codelineno-21-32" href="#__codelineno-21-32"></a>    <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="n">InvalidStateError</span><span class="p">):</span>
+</span><span id="__span-21-33"><a id="__codelineno-21-33" name="__codelineno-21-33" href="#__codelineno-21-33"></a>        <span class="n">order</span><span class="o">.</span><span class="n">cancel</span><span class="p">()</span>
 </span></code></pre></div>
 <h2 id="summary">Summary</h2>
 <p>Testing strategies:</p>

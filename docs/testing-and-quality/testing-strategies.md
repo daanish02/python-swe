@@ -363,6 +363,135 @@ def save_to_database(data):
 
 **Edge case**: An unusual or extreme input that might cause unexpected behavior (e.g., empty lists, zero, negative numbers, very large values).
 
+### How to Analyze a Function for Edge Cases
+
+Follow this systematic process to identify edge cases:
+
+**Step 1: Identify the input types**
+
+Look at each parameter and note its type:
+
+- Numbers (int, float)
+- Strings
+- Collections (list, dict, set)
+- Objects
+- Booleans
+- Optional values (might be None)
+
+**Step 2: For each input, ask the edge case questions**
+
+For **numbers**:
+
+- What about zero?
+- What about negative values?
+- What about very large values?
+- What about floats vs ints?
+- What about special values (infinity, NaN)?
+
+For **strings**:
+
+- What about empty string ""?
+- What about single character?
+- What about very long strings?
+- What about special characters?
+- What about None?
+
+For **collections** (lists, dicts, sets):
+
+- What about empty collection?
+- What about single item?
+- What about very large collection?
+- What about None?
+- What about duplicates (for lists)?
+- What about missing keys (for dicts)?
+
+For **booleans**:
+
+- Test True
+- Test False
+- Test None (if allowed)
+
+**Step 3: Identify boundaries**
+
+Look for any limits, thresholds, or ranges in the function:
+
+- Age must be 18+? → Test 17, 18, 19
+- String max length 50? → Test 49, 50, 51
+- Price must be positive? → Test 0, -1, 0.01
+- List max size 100? → Test 99, 100, 101
+
+**Step 4: Consider error conditions**
+
+What should cause errors?
+
+- Invalid inputs
+- Violated constraints
+- Out-of-range values
+
+**Example application:**
+
+```python
+def filter_products(products, min_price=0, max_price=None, in_stock=True):
+    """Filter products by price and availability."""
+    result = []
+    for product in products:
+        if product.price < min_price:
+            continue
+        if max_price and product.price > max_price:
+            continue
+        if in_stock and not product.in_stock:
+            continue
+        result.append(product)
+    return result
+
+# Step 1: Identify inputs
+# - products: list
+# - min_price: number (default 0)
+# - max_price: number or None
+# - in_stock: boolean
+
+# Step 2: Edge case questions
+# products (list):
+#   - Empty list? Yes, test
+#   - Single product? Test
+#   - None? If should handle, test
+#
+# min_price (number):
+#   - Zero? Yes (default), test
+#   - Negative? Test
+#   - Very large? Test
+#
+# max_price (number or None):
+#   - None? Yes (default), test
+#   - Zero? Test
+#   - Less than min_price? Test
+#
+# in_stock (boolean):
+#   - True? Test
+#   - False? Test
+
+# Step 3: Boundaries
+# - Price boundaries: test products at exactly min_price, max_price
+# - Test products just above/below boundaries
+
+# Step 4: Error conditions
+# - What if max_price < min_price?
+# - What if products is not a list?
+
+# Tests needed:
+# 1. Empty product list
+# 2. Single product (in range, in stock)
+# 3. Multiple products with filtering
+# 4. No price filters (defaults)
+# 5. Only min_price filter
+# 6. Only max_price filter
+# 7. Both price filters
+# 8. in_stock=False (show all)
+# 9. Product at exactly min_price
+# 10. Product at exactly max_price
+# 11. max_price < min_price (edge case or error?)
+```
+
 ### Boundary Testing
 
 ```python
@@ -463,6 +592,220 @@ def test_duplicate_username():
     with pytest.raises(DuplicateError):
         create_user("alice", "alice2@example.com")
 ```
+
+### Practice Exercises: Finding Edge Cases
+
+Practice applying the edge case analysis process. For each function, identify the edge cases and boundaries to test.
+
+#### Exercise 1: String Truncation
+
+```python
+def truncate(text, max_length, suffix="..."):
+    """Truncate text to max_length, adding suffix if truncated.
+
+    Args:
+        text: String to truncate
+        max_length: Maximum length (including suffix)
+        suffix: String to add if truncated
+
+    Returns:
+        Truncated string
+    """
+    if len(text) <= max_length:
+        return text
+    return text[:max_length - len(suffix)] + suffix
+```
+
+**Your turn:**
+
+1. What edge cases should you test?
+2. What boundaries exist?
+3. List at least 6 test cases
+
+<details>
+<summary>Click to see answer</summary>
+
+**Edge cases to test:**
+
+- Empty string: `truncate("", 10)` → `""`
+- Text shorter than max_length: `truncate("hi", 10)` → `"hi"`
+- Text exactly max_length: `truncate("hello", 5)` → `"hello"`
+- Text longer than max_length: `truncate("hello world", 8)` → `"hello..."`
+- Very short max_length: `truncate("hello", 3)` → (edge case: can it fit suffix?)
+- Empty suffix: `truncate("hello", 3, suffix="")` → `"hel"`
+- Long suffix: `truncate("hello", 5, suffix="[more]")` → (suffix longer than max!)
+- Single character text: `truncate("a", 10)` → `"a"`
+
+**Boundaries:**
+
+- At max_length: text exactly max_length chars
+- Just over max_length: text is max_length + 1 chars
+- Suffix length vs max_length: when suffix_len >= max_length
+
+**Test cases (minimum 6):**
+
+1. Empty string
+2. Text shorter than max (no truncation)
+3. Text exactly at max (no truncation)
+4. Text longer than max (truncation)
+5. Max_length equals suffix length (edge case)
+6. Max_length less than suffix length (error or special handling?)
+7. Custom suffix
+8. Very long text
+</details>
+
+#### Exercise 2: Calculate Grade Average
+
+```python
+def calculate_grade_average(grades, drop_lowest=False):
+    """Calculate average of grades.
+
+    Args:
+        grades: List of numeric grades (0-100)
+        drop_lowest: If True, drop lowest grade before averaging
+
+    Returns:
+        Average grade as float
+
+    Raises:
+        ValueError: If grades is empty or contains invalid values
+    """
+    if not grades:
+        raise ValueError("Grades list cannot be empty")
+
+    for grade in grades:
+        if grade < 0 or grade > 100:
+            raise ValueError("Grade must be between 0 and 100")
+
+    if drop_lowest and len(grades) > 1:
+        grades_to_average = [g for g in grades if g != min(grades)]
+    else:
+        grades_to_average = grades
+
+    return sum(grades_to_average) / len(grades_to_average)
+```
+
+**Your turn:**
+
+1. What edge cases exist for the `grades` parameter?
+2. What boundary values should you test?
+3. What special cases exist for `drop_lowest`?
+4. List at least 8 test cases
+
+<details>
+<summary>Click to see answer</summary>
+
+**Edge cases:**
+
+- Empty list: Should raise ValueError
+- Single grade: drop_lowest should have no effect
+- Two grades: drop_lowest removes one
+- All grades identical: drop_lowest removes one copy
+- Grade at 0 boundary: `[0, 50, 100]`
+- Grade at 100 boundary: `[100, 80, 90]`
+- Multiple lowest grades: `[50, 50, 60]` - which to drop?
+- Very large list: performance check
+
+**Boundaries:**
+
+- grade = 0 (minimum valid)
+- grade = 100 (maximum valid)
+- grade = -1 (invalid)
+- grade = 101 (invalid)
+- len(grades) = 1 (can't drop from single item)
+- len(grades) = 2 (drop one, average the other)
+
+**drop_lowest special cases:**
+
+- False: normal average
+- True with single grade: don't drop
+- True with multiple: drop lowest
+- True with duplicate lowest: drop one
+
+**Test cases (minimum 8):**
+
+1. Normal case: `[80, 90, 85]`, `drop_lowest=False` → `85.0`
+2. Drop lowest: `[80, 90, 85]`, `drop_lowest=True` → `87.5` (drops 80)
+3. Empty list: raises ValueError
+4. Single grade: `[90]`, `drop_lowest=True` → `90.0` (can't drop)
+5. Two grades: `[80, 90]`, `drop_lowest=True` → `90.0`
+6. All same: `[85, 85, 85]`, `drop_lowest=True` → `85.0`
+7. Grade at 0: `[0, 50, 100]` → `50.0`
+8. Grade at 100: `[100, 100, 100]` → `100.0`
+9. Invalid negative: `[-5, 80, 90]` → ValueError
+10. Invalid over 100: `[80, 90, 105]` → ValueError
+</details>
+
+#### Exercise 3: Find Common Elements
+
+```python
+def find_common_elements(list1, list2):
+    """Find elements that appear in both lists.
+
+    Args:
+        list1: First list
+        list2: Second list
+
+    Returns:
+        List of common elements (no duplicates, order from list1)
+
+    Example:
+        find_common_elements([1, 2, 3, 2], [2, 3, 4]) → [2, 3]
+    """
+    common = []
+    seen = set()
+
+    for item in list1:
+        if item in list2 and item not in seen:
+            common.append(item)
+            seen.add(item)
+
+    return common
+```
+
+**Your turn:**
+
+1. What collection edge cases should you test?
+2. What scenarios exist for common elements?
+3. How should duplicates be handled?
+4. List at least 7 test cases
+
+<details>
+<summary>Click to see answer</summary>
+
+**Edge cases:**
+
+- Both lists empty: `[], []` → `[]`
+- One list empty: `[1, 2], []` → `[]`
+- No common elements: `[1, 2], [3, 4]` → `[]`
+- All elements common: `[1, 2], [1, 2]` → `[1, 2]`
+- Single element lists: `[1], [1]` → `[1]`
+- Duplicates in list1: `[1, 1, 2], [1, 2]` → `[1, 2]` (no duplicates in result)
+- Duplicates in list2: `[1, 2], [1, 1, 2]` → `[1, 2]`
+- Different types: `[1, "a", 2], ["a", 3]` → `["a"]`
+
+**Common element scenarios:**
+
+- Some common, some not: `[1, 2, 3], [2, 3, 4]` → `[2, 3]`
+- First element common: `[1, 2, 3], [1, 4]` → `[1]`
+- Last element common: `[1, 2, 3], [4, 3]` → `[3]`
+- Middle elements common: `[1, 2, 3, 4], [5, 2, 3, 6]` → `[2, 3]`
+
+**Order preservation:**
+
+- Result order matches list1: `[3, 1, 2], [1, 2, 3]` → `[3, 1, 2]`
+
+**Test cases (minimum 7):**
+
+1. Both empty: `[], []` → `[]`
+2. One empty: `[1, 2], []` → `[]`
+3. No common: `[1, 2], [3, 4]` → `[]`
+4. Some common: `[1, 2, 3], [2, 3, 4]` → `[2, 3]`
+5. All common: `[1, 2], [2, 1]` → `[1, 2]`
+6. Duplicates in list1: `[1, 1, 2], [1, 2]` → `[1, 2]`
+7. Order preserved: `[3, 1, 2], [1, 2, 3]` → `[3, 1, 2]`
+8. Single elements: `[1], [1]` → `[1]`
+</details>
 
 ### State Transitions
 

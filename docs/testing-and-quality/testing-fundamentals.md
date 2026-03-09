@@ -1,5 +1,16 @@
 # Testing Fundamentals
 
+## Table of Contents
+
+- [Why Testing Matters](#why-testing-matters)
+- [Types of Tests](#types-of-tests)
+- [Test Structure](#test-structure)
+- [Writing Your First Tests](#writing-your-first-tests)
+- [Test Organization](#test-organization)
+- [Testing Best Practices](#testing-best-practices)
+- [Summary](#summary)
+- [Next Steps](#next-steps)
+
 ## Why Testing Matters
 
 ### Benefits of Testing
@@ -395,6 +406,27 @@ class TestUserProfile:
 
 ### Test One Thing
 
+**Principle:** Each test should verify one specific behavior or scenario.
+
+**How to decide if you're testing too much:**
+
+1. Can you describe what the test does in one sentence?
+   - If you need "and" or multiple sentences → Split it
+2. If one assertion fails, would you still want to run the others?
+   - If yes → They're testing different things → Split them
+3. Does the test name contain "and"?
+   - If yes → Probably testing multiple things
+
+**Decision process:**
+
+```
+Look at your test:
+├─ Does it test creation AND behavior? → Split
+├─ Does it test multiple methods? → Split
+├─ Does it test multiple scenarios? → Split
+└─ Does it test one method with one scenario? → Good!
+```
+
 ```python
 # Bad: Test multiple things
 def test_user():
@@ -405,6 +437,10 @@ def test_user():
     assert not user.active  # Testing deactivation
     user.update_email("new@example.com")
     assert user.email == "new@example.com"  # Testing update
+
+# Problem: If deactivation breaks, you can't see if update_email works
+# Problem: Test name doesn't describe what it tests
+# Problem: Hard to understand what failed when it breaks
 
 # Good: Separate tests
 def test_user_has_correct_name():
@@ -424,6 +460,22 @@ def test_user_can_update_email():
     user = User("Alice", "alice@example.com")
     user.update_email("new@example.com")
     assert user.email == "new@example.com"
+
+# Better: Each test has clear purpose
+# Better: Failures are easy to diagnose
+# Better: Tests can run independently
+```
+
+**Exception:** Multiple related assertions are OK if they verify the same behavior:
+
+```python
+# This is OK - all assertions verify the same behavior
+def test_parse_name_returns_all_parts():
+    result = parse_name("John Robert Smith")
+    assert result["first"] == "John"
+    assert result["middle"] == "Robert"
+    assert result["last"] == "Smith"
+    # All assertions verify parsing works correctly
 ```
 
 ### Use Descriptive Names
@@ -519,6 +571,68 @@ def test_deactivate_user():
     user.deactivate()
     assert not user.active
 ```
+
+### Test Discovery Checklist
+
+When looking at a function or class, use this checklist to identify what tests to write:
+
+**For any function:**
+
+1. **Does it have conditional logic?** (if/else, match/case)
+   - Test each branch
+2. **Does it validate inputs?**
+   - Test with invalid inputs (should raise errors)
+3. **Does it have edge cases?** (empty list, zero, None, boundaries)
+   - Test each edge case
+4. **Does it return a value?**
+   - Test the return value with typical inputs
+5. **Does it have side effects?** (modifies state, writes files, calls APIs)
+   - Test the side effects occurred
+
+**For classes:**
+
+1. **Initialization:** Test object creation with various parameters
+2. **Each public method:** Apply the function checklist above
+3. **State changes:** Test that methods modify state correctly
+4. **Method interactions:** Test sequences of method calls
+
+**Example application:**
+
+```python
+def calculate_discount(price, discount_percent):
+    if price < 0:
+        raise ValueError("Price cannot be negative")
+    if discount_percent < 0 or discount_percent > 100:
+        raise ValueError("Discount must be 0-100")
+    return price * (discount_percent / 100)
+
+# Checklist:
+# Conditional logic? Yes (2 if statements) → Test each branch
+# Validates inputs? Yes → Test invalid price, invalid discount
+# Edge cases? Yes → Test 0 price, 0%, 100% discount
+# Returns value? Yes → Test return with typical inputs
+# Side effects? No
+
+# Tests needed:
+# 1. Normal case: typical price and discount
+# 2. Edge: zero price
+# 3. Edge: 0% discount
+# 4. Edge: 100% discount
+# 5. Error: negative price
+# 6. Error: negative discount
+# 7. Error: discount > 100
+
+# That's 7 tests - comprehensive coverage!
+```
+
+**Use this process:**
+
+1. Go through the checklist for each function
+2. Write down the tests you need (don't write code yet!)
+3. Review your list - missing anything?
+4. Then write the actual test code
+
+This systematic approach ensures you don't miss important test cases!
 
 ## Summary
 
