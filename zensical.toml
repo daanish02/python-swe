@@ -16,6 +16,7 @@ nav = [
     { "Design Philosophy" = "overview/design-philosophy.md" },
     { "Execution Model" = "overview/execution-model.md" },
     { "Mental Model" = "overview/mental-models.md" },
+    { "Code Maturity" = "overview/code-maturity-levels.md" },
   ] },
   { "Fundamentals" = [
     "fundamentals/README.md",
@@ -48,6 +49,7 @@ nav = [
   ] },
   { "Patterns and Practises" = [
     "patterns-and-practices/README.md",
+    { "Code Maturity Checklist" = "patterns-and-practices/code-maturity-checklist.md" },
     { "Code Style and Standards" = "patterns-and-practices/code-style-and-standards.md" },
     { "Writing Clean Code" = "patterns-and-practices/writing-clean-code.md" },
     { "Documentation" = "patterns-and-practices/documentation.md" },

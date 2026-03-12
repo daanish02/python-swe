@@ -23,3 +23,5 @@ How Python code actually runs - from source code to execution. Covers the compil
 ### [Mental Models](mental-models.md)
 
 Frameworks for thinking about Python programs. Covers how to think about Python's object model, namespaces, scopes, mutability, and other conceptual models that help you reason about code behavior and make better design decisions.
+
+## [Code Maturity](code-maturity-progression.md)

@@ -8,11 +8,9 @@ These patterns and practices are language-agnostic principles applied specifical
 
 ## Contents
 
-\### \[Code Maturity Self-Assessment Checklist](code-maturity-checklist.md)
+##[Code Maturity Self-Assessment Checklist](code-maturity-checklist.md)
 
-
-
-Checklist to identify which phase your project is at and what capabilities you should focus on next. 
+Checklist to identify which phase your project is at and what capabilities you should focus on next.
 
 ### [Code Style and Standards](code-style-and-standards.md)
 
@@ -45,4 +43,3 @@ Single Responsibility Principle, Open/Closed Principle, Liskov Substitution Prin
 ### [Refactoring](refactoring.md)
 
 Recognizing code smells, refactoring techniques, when to refactor, maintaining functionality during refactoring, and incremental improvement strategies.
-
